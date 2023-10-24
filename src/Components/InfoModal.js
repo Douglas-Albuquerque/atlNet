@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { Button, Modal, Space } from 'antd';
 import { createStyles, useTheme } from 'antd-style';
 import Pag from './Pagination';
+
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {
     background: token['colorWhite'],
-    padding: token.paddingSM,
+    padding: token.paddingContentHorizontalLG,
   },
   'my-modal-mask': {
     boxShadow: `inset 0 0 15px #fff`,
   },
   'my-modal-header': {
-    borderBottom: `1px dotted ${token.colorPrimary}`,
+    borderBottom: `0px solid ${token.colorPrimary}`,
   },
   'my-modal-footer': {
     color: token.colorPrimary,
@@ -20,7 +21,7 @@ const useStyle = createStyles(({ token }) => ({
     border: '1px solid',
   },
 }));
-const InfoModal = () => {
+const InfoModal = ({ openModal }) => {
   const [isModalOpen, setIsModalOpen] = useState([false, false]);
   const { styles } = useStyle();
   const token = useTheme();
@@ -39,8 +40,8 @@ const InfoModal = () => {
   };
   const modalStyles = {
     header: {
-      borderRadius: 2,
-      paddingInlineStart: 5,
+      borderRadius: 3,
+      paddingInlineStart: 25,
     },
     body: {
       boxShadow: 'inset 0 0 5px #999',
@@ -61,26 +62,21 @@ const InfoModal = () => {
   };
   return (
     <>
-      <Space>
-        <Button type="primary" onClick={() => toggleModal(0, true)}>
-          Buscar
-        </Button>
-      </Space>
       <Modal
         title="Equipamento"
-        open={isModalOpen[0]}
+        open={openModal}
         onOk={() => toggleModal(0, false)}
         onCancel={() => toggleModal(0, false)}
-        footer={<Pag />}
+        footer={< Pag />}
         classNames={classNames}
         styles={modalStyles}
       >
-        <p>Codigo Local:</p>
-        <p>Endereço: </p>
-        <p>Sentido:</p>
-        <p>Status:</p>
-        <p>Longitude:</p>
-        <p>Latitude:</p>
+        <p>Codigo Local: ATS94403</p>
+        <p>Endereço: BR 155 SAÍDA/ENTRADA PARA PAU D"ARCO Redenção, PA,</p>
+        <p>Sentido: Norte/Sul</p>
+        <p>Status: ATIVO</p>
+        <p>Longitude: -8.01239524343842</p>
+        <p>Latitude: -50.063422984314</p>
         <p>Tipo do equipamento: LPR Fixo</p>
 
       </Modal>

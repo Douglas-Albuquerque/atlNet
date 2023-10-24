@@ -34,8 +34,8 @@
 }
 
 .logoImg {
-  margin: 10px;
-  width: 120PX;
-  height: 80px;
+  margin-right: 25px;
   cursor: pointer;
+  color: aliceblue;
+  
 }

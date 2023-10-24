@@ -4,7 +4,8 @@ import './Pagination.css'
 const Pag = () => (
   <>
     <div className='container'>
-      <Pagination simple defaultCurrent={1} total={50} />
+      
+      <Pagination simple defaultCurrent={1} total={30} />
     </div>
   </>
 );

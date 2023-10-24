@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Footer from '../../Components/components.old/Footer.js';
-import InfoModal from '../../Components/InfoModal.js';
-import InputEquip from '../../Components/InputEquip.js';
-import NavBar from '../../Components/components.old/NavBat.js';
-import logoImg from '../../img/atl_azul.png'
-import './style.css'
+import InfoModal from '../Components/InfoModal.js';
+import InputEquip from '../Components/InputEquip.js';
+import logoImg from '../img/atl_azul.png'
+import './body.css'
 
-function Home() {
+function Body() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div>
@@ -26,4 +24,4 @@ function Home() {
   );
 };
 
-export default Home;
+export default Body;

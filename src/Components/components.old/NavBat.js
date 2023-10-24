@@ -1,14 +1,14 @@
 import React from 'react'
 
 import "./NavBar.css"
-import logoImg from '../img/atl.png'
+import logoImg from '../../img/atl.png'
 
 const NavBar = () => {
 
   return (
     <nav className='navBar'>
       <div>
-        {<img className='logoImg' src={logoImg} alt='Logo da Atlanta Técnologia' />}
+        {<img className='logoImg' src={logoImg} alt='Logo da Atlanta Tecnologia' />}
       </div>
       <div className="label">
         <p>Atlanta Network</p>

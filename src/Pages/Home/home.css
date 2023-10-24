@@ -1,0 +1,37 @@
+.text{
+    color: #f0f0f0;
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+.logoBox{
+    width: 120PX;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.icon{
+
+    display: flex;
+    margin-right: 2rem;
+}
+.logoImg {
+    margin-right: 25PX;
+    width: 120PX;
+    height: 80px;
+    
+}
+.layout{
+    max-width: 300vh;
+}
+
+@media (max-width: 768px) {
+    .layout {
+      min-height: 100%;
+    }
+  
+  }
