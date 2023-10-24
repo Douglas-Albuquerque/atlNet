@@ -11,68 +11,78 @@ import {
     VideoCameraOutlined,
     UsergroupAddOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Button, theme, } from 'antd';
+import { Layout, Menu, Button, theme, ConfigProvider, } from 'antd';
 const { Header, Sider, Content } = Layout;
 const HomePage = () => {
 
-    const [collapsed, setCollapsed] = useState(false);
-    const {
-        token: { colorBgContainer },
-    } = theme.useToken();
+    const [collapsed, setCollapsed] = useState(true);
+
     return (
         <Layout>
-            <Sider style={{ backgroundColor: '#1F4070' }} trigger={null} collapsible collapsed={collapsed}>
-                <div className='logoBox'> <Button
-                    type="text"
-                    icon={collapsed
-                        ? <div className='icon'><MenuUnfoldOutlined /></div>
-                        : <img className='logoImg' src={logoImgMenu} alt='Logo da Atlanta Tecnologia' />
-                    } onClick={() => setCollapsed(!collapsed)}
-                    style={{
-                        fontSize: '16px',
-                        width: 64,
-                        height: 64,
-                        color: 'white',
-                        margin: "0 200 0 0",
-
-                    }}
-                /></div>
-                <Menu
+            <ConfigProvider
+                theme={{
+                    token: {
+                        colorPrimary: "#275296",
+                    }
+                }}
+            >
+                <Sider
+                    trigger={null}
+                    collapsible collapsed={collapsed}
                     style={{ backgroundColor: '#1F4070', color: '#FFF' }}
-                    theme="dark"
-                    color='white'
-                    mode="inline"
-                    defaultSelectedKeys={['1']}
-                    items={[
-                        {
-                            key: '1',
-                            icon: <HomeOutlined />,
-                            label: 'Home',
-                        },
-                        {
-                            key: '2',
-                            icon: <VideoCameraOutlined />,
-                            label: 'Equipamentos',
-                        },
-                        {
-                            key: '3',
-                            icon: <PlusCircleOutlined />,
-                            label: 'Cadastro',
-                        },
-                        {
-                            key: '4',
-                            icon: <UserOutlined />,
-                            label: 'Perfil',
-                        },
-                        {
-                            key: '5',
-                            icon: <UsergroupAddOutlined />,
-                            label: 'Usuários',
-                        },
+                >
+                    <div className='logoBox'> <Button
+                        type="text"
+                        icon={collapsed
+                            ? <div className='icon'><MenuUnfoldOutlined /></div>
+                            : <img className='logoImg' src={logoImgMenu} alt='Logo da Atlanta Tecnologia' />
+                        } onClick={() => setCollapsed(!collapsed)}
+                        style={{
+                            fontSize: '16px',
+                            width: 64,
+                            height: 64,
+                            color: 'white',
+                            margin: "0 200 0 0",
+                        }}
+                    />
+                    </div>
+                    <Menu
+                        style={{ backgroundColor: '#1F4070', color: '#FFF' }}
+                        theme="dark"
+                        color='white'
+                        mode="inline"
+                        defaultSelectedKeys={['1']}
+                        items={[
+                            {
+                                key: '1',
+                                icon: <HomeOutlined />,
+                                label: 'Home',
+                            },
+                            {
+                                key: '2',
+                                icon: <VideoCameraOutlined />,
+                                label: 'Equipamentos',
+                            },
+                            {
+                                key: '3',
+                                icon: <PlusCircleOutlined />,
+                                label: 'Cadastro',
+                            },
+                            {
+                                key: '4',
+                                icon: <UserOutlined />,
+                                label: 'Perfil',
+                            },
+                            {
+                                key: '5',
+                                icon: <UsergroupAddOutlined />,
+                                label: 'Usuários',
+                            },
 
-                    ]}
-                />
-            </Sider>
+                        ]}
+                    />
+                </Sider>
+            </ConfigProvider>
             <Layout className='layout'>
                 <Header
                     style={{
@@ -90,7 +100,7 @@ const HomePage = () => {
                         background: "White",
                     }}
                 >
-                <Body/>
+                    <Body />
                 </Content>
             </Layout>
         </Layout>

@@ -8,11 +8,9 @@ import ptBR from 'antd/locale/pt_BR'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <ConfigProvider locale={ptBR}>
-      <App />
-    </ConfigProvider>
-  </React.StrictMode>
+  <ConfigProvider locale={ptBR}>
+    <App />
+  </ConfigProvider>
 );
 
 reportWebVitals();
