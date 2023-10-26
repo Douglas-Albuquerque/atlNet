@@ -29,9 +29,6 @@
 
 }
 
-.layout {
-    max-width: 300vh;
-}
 
 @media (max-width: 768px) {
     .layout {

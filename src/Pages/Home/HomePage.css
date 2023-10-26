@@ -1,0 +1,8 @@
+.container{
+ align-content: center;
+ min-width: 90vh;
+ min-height: 90vh;
+ display: flex;
+justify-content: center;
+
+}

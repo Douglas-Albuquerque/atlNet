@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, Space } from 'antd';
 import { createStyles, useTheme } from 'antd-style';
-import Pag from './Pagination';
+import Pag from '../Pagination/Pagination';
 
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {

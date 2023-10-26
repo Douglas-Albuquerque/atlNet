@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Home from './Pages/Home/index.js'
-import HomePage from './Pages/Home/home.js';
+import HomePage from './Pages/Home/HomePage';
+import LayoutAtl from './Components/Layout/LayoutAtl'
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <LayoutAtl/>
     </div>
   );
 };

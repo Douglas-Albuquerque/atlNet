@@ -1,0 +1,11 @@
+.bgImg {
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    opacity: 0.1;
+    align-self: center;
+    align-content: center;
+}
+.img{
+    object-fit: contain;
+}

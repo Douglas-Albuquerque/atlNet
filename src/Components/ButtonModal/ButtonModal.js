@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import InfoModal from '../Components/InfoModal.js';
-import InputEquip from '../Components/InputEquip.js';
-import './body.css'
+import InfoModal from '../infoModal/InfoModal';
+import InputSearch from '../inputSearch/InputSearch';
+import './ButtonModal.css'
 
-function Body() {
+function ButtonModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div>
@@ -11,15 +11,12 @@ function Body() {
         <InfoModal
           openModal={isModalOpen}
         />
-        <InputEquip
+        <InputSearch
           openModal={() => setIsModalOpen(true)}
         />
       </div>
-      <div className='bodySpace'>
-      </div>
-
     </div>
   );
 };
 
-export default Body;
+export default ButtonModal;

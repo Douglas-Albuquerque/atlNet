@@ -10,7 +10,11 @@ const InputEquip = ({ openModal }) => (
       }
     }}
   >
-    <Space direction="vertical">
+    <Space
+    style={{
+      paddingTop: "2rem",
+    }}
+    >
       <Search
         placeholder="Insira o cod. Local"
         onSearch={openModal}

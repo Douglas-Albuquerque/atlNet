@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './home.css';
-import Body from '../../Components/body';
+import './LayoutAtl.css';
 import logoImgMenu from '../../img/atl.png';
+import Cadastro from '../../Pages/Cadastro/cadastro'
+import HomePage from '../../Pages/Home/HomePage';
 
 import {
     HomeOutlined,
@@ -13,7 +14,7 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme, ConfigProvider, } from 'antd';
 const { Header, Sider, Content } = Layout;
-const HomePage = () => {
+const LayoutAtl = () => {
 
     const [collapsed, setCollapsed] = useState(true);
 
@@ -31,20 +32,22 @@ const HomePage = () => {
                     collapsible collapsed={collapsed}
                     style={{ backgroundColor: '#1F4070', color: '#FFF' }}
                 >
-                    <div className='logoBox'> <Button
-                        type="text"
-                        icon={collapsed
-                            ? <div className='icon'><MenuUnfoldOutlined /></div>
-                            : <img className='logoImg' src={logoImgMenu} alt='Logo da Atlanta Tecnologia' />
-                        } onClick={() => setCollapsed(!collapsed)}
-                        style={{
-                            fontSize: '16px',
-                            width: 64,
-                            height: 64,
-                            color: 'white',
-                            margin: "0 200 0 0",
-                        }}
-                    />
+                    <div className='logoBox'>
+                        <Button
+                            type="text"
+                            icon={collapsed
+                                ? <div className='icon'><MenuUnfoldOutlined /></div>
+                                : <img className='logoImg' src={logoImgMenu} alt='Logo da Atlanta Tecnologia' />
+                            } onClick={() => setCollapsed(!collapsed)}
+                            style={{
+                                fontSize: '16px',
+                                width: 64,
+                                height: 64,
+                                color: 'white',
+                                margin: "0 200 0 0",
+                                background: "transparent"
+                            }}
+                        />
                     </div>
                     <Menu
                         style={{ backgroundColor: '#1F4070', color: '#FFF' }}
@@ -95,16 +98,17 @@ const HomePage = () => {
                 </Header>
                 <Content
                     style={{
-                        padding: 24,
-                        minHeight: "100vh",
-                        background: "White",
+                        minHeight: "93.1vh",
                     }}
                 >
-                    <Body />
+                    {/* <Cadastro/> */}
+                    <HomePage/>
+
                 </Content>
+
             </Layout>
-        </Layout>
+        </Layout >
     );
 
 };
-export default HomePage;
+export default LayoutAtl;
