@@ -4,7 +4,7 @@ import InputSearch from '../inputSearch/InputSearch';
 import './ButtonModal.css'
 
 function ButtonModal() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   return (
     <div>
       <div className='modal'>

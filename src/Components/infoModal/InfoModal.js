@@ -5,20 +5,20 @@ import Pag from '../Pagination/Pagination';
 
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {
-    background: token['colorWhite'],
-    padding: token.paddingContentHorizontalLG,
+    background: token['blue-1'],
+    padding: token.paddingSM,
   },
   'my-modal-mask': {
     boxShadow: `inset 0 0 15px #fff`,
   },
   'my-modal-header': {
-    borderBottom: `0px solid ${token.colorPrimary}`,
+    borderBottom: `1px dotted ${token.colorPrimary}`,
   },
   'my-modal-footer': {
     color: token.colorPrimary,
   },
   'my-modal-content': {
-    border: '1px solid',
+    border: '1px solid #333',
   },
 }));
 const InfoModal = ({ openModal }) => {
@@ -40,8 +40,9 @@ const InfoModal = ({ openModal }) => {
   };
   const modalStyles = {
     header: {
-      borderRadius: 3,
-      paddingInlineStart: 25,
+      borderLeft: `5px solid ${token.colorPrimary}`,
+      borderRadius: 0,
+      paddingInlineStart: 5,
     },
     body: {
       boxShadow: 'inset 0 0 5px #999',
@@ -52,12 +53,9 @@ const InfoModal = ({ openModal }) => {
     },
     footer: {
       borderTop: '1px solid #333',
-      color: '#FFFFFF'
     },
     content: {
       boxShadow: '0 0 30px #999',
-      background: '#1F3F6E',
-      margin: "auto"
     },
   };
   return (
@@ -66,7 +64,7 @@ const InfoModal = ({ openModal }) => {
         title="Equipamento"
         open={openModal}
         onOk={() => toggleModal(0, false)}
-        onCancel={() => toggleModal(0, false)}
+        onCancel={() => toggleModal(1, false)}
         footer={< Pag />}
         classNames={classNames}
         styles={modalStyles}
