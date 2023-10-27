@@ -5,20 +5,21 @@ import Pag from '../Pagination/Pagination';
 
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {
-    background: token['blue-1'],
+    background: '#ACB4BF',
     padding: token.paddingSM,
   },
   'my-modal-mask': {
     boxShadow: `inset 0 0 15px #fff`,
   },
   'my-modal-header': {
-    borderBottom: `1px dotted ${token.colorPrimary}`,
+    borderBottom: '1px solid #1F4070',
   },
   'my-modal-footer': {
     color: token.colorPrimary,
   },
   'my-modal-content': {
-    border: '1px solid #333',
+    border: '1px solid #FFF',
+    width: '900px',
   },
 }));
 const InfoModal = ({ openModal }) => {
@@ -40,7 +41,7 @@ const InfoModal = ({ openModal }) => {
   };
   const modalStyles = {
     header: {
-      borderLeft: `5px solid ${token.colorPrimary}`,
+      borderLeft: `5px solid #1F4070`,
       borderRadius: 0,
       paddingInlineStart: 5,
     },
@@ -52,7 +53,7 @@ const InfoModal = ({ openModal }) => {
       backdropFilter: 'blur(10px)',
     },
     footer: {
-      borderTop: '1px solid #333',
+      borderTop: '1px solid #1F4070',
     },
     content: {
       boxShadow: '0 0 30px #999',
