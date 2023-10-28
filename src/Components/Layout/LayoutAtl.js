@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './LayoutAtl.css';
 import logoImgMenu from '../../img/atl.png';
-import Cadastro from '../../Pages/Cadastro/cadastro'
-import HomePage from '../../Pages/Home/HomePage';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+//import LayoutAtl from "../Components/Layout/LayoutAtl"
+import HomePage from "../../Pages/Home/HomePage";
+import CreateEquip from "../../Pages/CreateEquip/CreateEquip";
 
 import {
     HomeOutlined,
@@ -14,11 +16,14 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme, ConfigProvider, } from 'antd';
 const { Header, Sider, Content } = Layout;
+
 const LayoutAtl = () => {
 
+    const navigate = useNavigate()
     const [collapsed, setCollapsed] = useState(true);
 
     return (
+
         <Layout>
             <ConfigProvider
                 theme={{
@@ -54,22 +59,26 @@ const LayoutAtl = () => {
                         theme="dark"
                         color='white'
                         mode="inline"
+                        onClick={({ key }) => {
+                            navigate(key);
+                        }}
                         defaultSelectedKeys={['1']}
                         items={[
                             {
-                                key: '1',
+                                key: '/',
                                 icon: <HomeOutlined />,
                                 label: 'Home',
+
+                            },
+                            {
+                                key: '/createequip',
+                                icon: <PlusCircleOutlined />,
+                                label: 'Cadastro de Equipamentos',
                             },
                             {
                                 key: '2',
                                 icon: <VideoCameraOutlined />,
                                 label: 'Equipamentos',
-                            },
-                            {
-                                key: '3',
-                                icon: <PlusCircleOutlined />,
-                                label: 'Cadastro',
                             },
                             {
                                 key: '4',
@@ -101,13 +110,20 @@ const LayoutAtl = () => {
                         minHeight: "93.1vh",
                     }}
                 >
-                    {/* <Cadastro/> */}
-                    <HomePage/>
+                    <div>
+                        <Routes>
+                            {/* <Route path="/" element={<LoginPage />} /> */}
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="createequip" element={<CreateEquip />} />
+                            {/* <Route path="*" element={<NotFound />} /> */}
+                        </Routes>
+                    </div>
 
                 </Content>
 
             </Layout>
         </Layout >
+
     );
 
 };

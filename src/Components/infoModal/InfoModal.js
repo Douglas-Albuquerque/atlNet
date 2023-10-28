@@ -1,37 +1,50 @@
-import React, { useState } from 'react';
-import { Button, Modal, Space } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { ConfigProvider, Modal } from 'antd';
 import { createStyles, useTheme } from 'antd-style';
 import Pag from '../Pagination/Pagination';
+import Screens from './Screens'
+
 
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {
-    background: '#ACB4BF',
+    background: '#F5F5DC',
     padding: token.paddingSM,
   },
   'my-modal-mask': {
-    boxShadow: `inset 0 0 15px #fff`,
+    boxShadow: `inset 0 0 15px #000`,
   },
   'my-modal-header': {
-    borderBottom: '1px solid #1F4070',
+    borderBottom: '3px solid #1F4070',
+    
+    display: 'flex',
+    justifyContent: 'center'
   },
   'my-modal-footer': {
     color: token.colorPrimary,
   },
   'my-modal-content': {
-    border: '1px solid #FFF',
+    backgroundColor: '#ACB4BF',
     width: '900px',
   },
+
+
+
 }));
-const InfoModal = ({ openModal }) => {
-  const [isModalOpen, setIsModalOpen] = useState([false, false]);
+const InfoModal = ({ openModal, closeModal }) => {
+  const [countPage, setCountPage] = useState(1);
   const { styles } = useStyle();
   const token = useTheme();
-  const toggleModal = (idx, target) => {
-    setIsModalOpen((p) => {
-      p[idx] = target;
-      return [...p];
-    });
+  const goToNextPage = () => {
+    if (countPage < 3) {
+      setCountPage(countPage + 1);
+    }
   };
+  const goToPreviousPage = () => {
+    if (countPage > 1) {
+      setCountPage(countPage - 1);
+    }
+  };
+  console.log(countPage);
   const classNames = {
     body: styles['my-modal-body'],
     mask: styles['my-modal-mask'],
@@ -41,45 +54,56 @@ const InfoModal = ({ openModal }) => {
   };
   const modalStyles = {
     header: {
-      borderLeft: `5px solid #1F4070`,
       borderRadius: 0,
       paddingInlineStart: 5,
+      backgroundColor: '#FFF',
     },
     body: {
-      boxShadow: 'inset 0 0 5px #999',
+      boxShadow: 'inset 0 0 10px #999',
       borderRadius: 5,
     },
     mask: {
       backdropFilter: 'blur(10px)',
     },
     footer: {
-      borderTop: '1px solid #1F4070',
+      borderTop: '3px solid #1F4070',
     },
     content: {
       boxShadow: '0 0 30px #999',
+      marginLeft: '-200px'
     },
   };
+  useEffect(() => { }, [countPage])
   return (
     <>
-      <Modal
-        title="Equipamento"
-        open={openModal}
-        onOk={() => toggleModal(0, false)}
-        onCancel={() => toggleModal(1, false)}
-        footer={< Pag />}
-        classNames={classNames}
-        styles={modalStyles}
+      <ConfigProvider
+        theme={{
+          components:{
+            Modal:{
+              titleFontSize: 22,
+            }
+          }
+        }}
       >
-        <p>Codigo Local: ATS94403</p>
-        <p>Endereço: BR 155 SAÍDA/ENTRADA PARA PAU D"ARCO Redenção, PA,</p>
-        <p>Sentido: Norte/Sul</p>
-        <p>Status: ATIVO</p>
-        <p>Longitude: -8.01239524343842</p>
-        <p>Latitude: -50.063422984314</p>
-        <p>Tipo do equipamento: LPR Fixo</p>
+        <Modal
+          title="Equipamento"
+          open={openModal}
+          onCancel={'none'}
+          footer={
+            < Pag
+              nextPage={() => goToNextPage()}
+              previousPage={() => goToPreviousPage()}
+              countPage={countPage}
+            />}
 
-      </Modal>
-
+          classNames={classNames}
+          styles={modalStyles}
+        >
+          <Screens
+            countPage={countPage}
+          />
+        </Modal>
+      </ConfigProvider>
     </>
   );
 };

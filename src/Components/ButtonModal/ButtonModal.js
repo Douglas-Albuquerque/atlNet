@@ -10,6 +10,7 @@ function ButtonModal() {
       <div className='modal'>
         <InfoModal
           openModal={isModalOpen}
+          closeModal={() => setIsModalOpen(false) }
         />
         <InputSearch
           openModal={() => setIsModalOpen(true)}
