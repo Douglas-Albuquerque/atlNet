@@ -1,24 +1,227 @@
 import React from "react";
+import { Col, Row } from 'antd';
+import './Screen.css'
 
-function Screen2() {
+const Screen2 = () => {
     return (
         <div>
-            <p>IP Wan: 177.XX.138.xxx</p>
-            <p>192.XXX.102.XXXx</p>
-            <p>IP Câmera 1: 10.XXX.254.XXX</p>
-            <p>IP Câmera 2: 10.XXX.254.XXX</p>
-            <p>PORTAS INTERNAS             PORTAS EXTERNAS</p>
-            <p>Atsmsblitz:8090             Atsmsblitz:8090</p>
-            <p>SSH:22222                   SSH: 22222</p>
-            <p>RTSP CAM 1:554              RTSP CAM 1:554</p>
-            <p>RTSP CAM 2:555              RTSP CAM 2:555</p>
-            <p>HTTP CAM 1:554              HTTP CAM 1:554</p>
-            <p>HTTP CAM 2:554              HTTP CAM 2:554</p>
-            <p>HTTP Mikrotik:554           HTTP Mikrotik:554</p>
-            <p>NVR CAM 1: 554              NVR CAM 1:554</p>
-            <p>NVR CAM 2:554               NVR CAM 2:554</p>
-        </div>
-    )
-}
+            <div className="container1col">
+                <div>
+                    <Row>
+                        <Col className="colText">
+                            IP WAN:
+                        </Col>
+                        <Col className="col2Text">
+                            177.XX.138.xxx
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="colText">
+                            IP PC LAN:
+                        </Col>
+                        <Col className="col2Text">
+                            177.XX.138.xxx
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="colText">
+                            IP PC VPN:
+                        </Col>
+                        <Col className="col2Text">
+                            177.XX.138.xxx
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="colText">
+                            IP CAM 1:
+                        </Col>
+                        <Col className="col2Text">
+                            177.XX.138.xxx
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="colText">
+                            IP CAM 2:
+                        </Col>
+                        <Col className="col2Text">
+                            177.XX.138.xxx
+                        </Col>
+                    </Row>
+                </div>
+            </div>
+            <hr></hr>
+            <div className="container2col">
+                <div className="contInterna">
+                    <Col>
+                        <Row>
+                            <Col className="titleText">
+                                PORTAS INTERNAS
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                ATSMSBLITZ:
+                            </Col>
+                            <Col className="col2Text">
+                                8090
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                SSH:
+                            </Col>
+                            <Col className="col2Text">
+                                22222
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                RTSP CAM 1:
+                            </Col>
+                            <Col className="col2Text">
+                                554
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                RTSP CAM 2:
+                            </Col>
+                            <Col className="col2Text">
+                                555
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                HTTP CAM 1:
+                            </Col>
+                            <Col className="col2Text">
+                                8164
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                HTTP CAM 2:
+                            </Col>
+                            <Col className="col2Text">
+                                8165
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                HTTP MIKROTIK:
+                            </Col>
+                            <Col className="col2Text">
+                                8001
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                NVR CAM 1:
+                            </Col>
+                            <Col className="col2Text">
+                                8000
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                NVR CAM 2:
+                            </Col>
+                            <Col className="col2Text">
+                                8888
+                            </Col>
+                        </Row>
+                    </Col>
+                </div>
+                <div className="hrStyle">
+                    <hr></hr>
+                </div>
+                <div>
+                    <Col>
+                        <Row>
+                            <Col className="titleText">
+                                PORTAS EXTERNAS
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                ATSMSBLITZ:
+                            </Col>
+                            <Col className="col2Text">
+                                8090
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                SSH:
+                            </Col>
+                            <Col className="col2Text">
+                                22222
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                RTSP CAM 1:
+                            </Col>
+                            <Col className="col2Text">
+                                554
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                RTSP CAM 2:
+                            </Col>
+                            <Col className="col2Text">
+                                555
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                HTTP CAM 1:
+                            </Col>
+                            <Col className="col2Text">
+                                8164
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                HTTP CAM 2:
+                            </Col>
+                            <Col className="col2Text">
+                                8165
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                HTTP MIKROTIK:
+                            </Col>
+                            <Col>
+                                8001
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                NVR CAM 1:
+                            </Col>
+                            <Col className="col2Text">
+                                8000
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="colText">
+                                NVR CAM 2:
+                            </Col>
+                            <Col className="col2Text">
+                                8888
+                            </Col>
+                        </Row>
+                    </Col>
+                </div>
+            </div>
 
-export default Screen2
+        </div>
+
+    )
+
+};
+
+export default Screen2;

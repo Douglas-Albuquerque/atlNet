@@ -1,0 +1,34 @@
+.fixedText {
+    margin-right: 5px;
+
+}
+
+.colText {
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: medium;
+}
+.col2Text{
+    font-size: medium;
+}
+
+.container1col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container2col {
+    display: flex;
+    justify-content: space-around;
+}
+
+.titleText {
+    font-weight: bold;
+    font-size: large;
+}
+
+.hrStyle {
+    display: flex;
+    flex-direction: row;
+}

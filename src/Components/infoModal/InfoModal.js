@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { ConfigProvider, Modal } from 'antd';
 import { createStyles, useTheme } from 'antd-style';
 import Pag from '../Pagination/Pagination';
-import Screens from './Screens'
+import Screens from './Screens';
+
 
 
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {
     background: '#F5F5DC',
     padding: token.paddingSM,
+    
   },
   'my-modal-mask': {
     boxShadow: `inset 0 0 15px #000`,
@@ -25,13 +27,14 @@ const useStyle = createStyles(({ token }) => ({
   'my-modal-content': {
     backgroundColor: '#ACB4BF',
     width: '900px',
+    
   },
 
 
 
 }));
 const InfoModal = ({ openModal, closeModal }) => {
-  const [countPage, setCountPage] = useState(1);
+  const [countPage, setCountPage] = useState(2);
   const { styles } = useStyle();
   const token = useTheme();
   const goToNextPage = () => {
@@ -61,6 +64,7 @@ const InfoModal = ({ openModal, closeModal }) => {
     body: {
       boxShadow: 'inset 0 0 10px #999',
       borderRadius: 5,
+      fontSize: '18px'
     },
     mask: {
       backdropFilter: 'blur(10px)',
@@ -88,7 +92,7 @@ const InfoModal = ({ openModal, closeModal }) => {
         <Modal
           title="Equipamento"
           open={openModal}
-          onCancel={'none'}
+          onCancel={closeModal}
           footer={
             < Pag
               nextPage={() => goToNextPage()}
