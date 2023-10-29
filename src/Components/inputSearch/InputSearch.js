@@ -1,26 +1,30 @@
-import { ConfigProvider, Input, Space } from 'antd';
-import React, { useState } from 'react';
-const { Search } = Input;
+import { SearchOutlined } from '@ant-design/icons';
+import React from 'react';
+import './InputSearch.css'
 
-const InputEquip = ({ openModal }) => (
-  <ConfigProvider
-    theme={{
-      token: {
-        colorPrimary: "#1F4070",
-      }
-    }}
-  >
-    <Space
-    style={{
-      paddingTop: "2rem",
-    }}
-    >
-      <Search
-        placeholder="Insira o cod. Local"
-        onSearch={openModal}
-        enterButton
-      />
-    </Space>
-  </ConfigProvider>
-);
+function InputEquip({ openModal, value, onChangeText }) {
+  return (
+    <div className='containerSearch'>
+      <div>
+        <input className='inputEquip'
+          placeholder='Insira o Cod. Equipamento'
+          value={value}
+          onChange={onChangeText}
+        >
+        </input>
+      </div>
+      <div>
+        <button className='inputButton'
+        onClick={openModal}
+        >
+          <SearchOutlined
+            style={{
+              fontSize: "20px",
+              marginRight: "5px",
+            }} />
+        </button>
+      </div>
+    </div>
+  );
+};
 export default InputEquip;

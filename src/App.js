@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import LayoutAtl from './Components/Layout/LayoutAtl'
 import RoutePage from './Router/index'
 
 function App() {

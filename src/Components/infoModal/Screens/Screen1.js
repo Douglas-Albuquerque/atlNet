@@ -4,7 +4,8 @@ import './Screen.css'
 function Screen1 (){
     return (
         <div>
-            <p><b className="fixedText">Contrato:</b>Redenção</p>
+            <p className="screen1title">Redenção</p>
+            <hr className="divisionLine"></hr>
             <p><b className="fixedText">Codigo Local:</b> ATS94403</p>
             <p><b className="fixedText">Endereço:</b> BR 155 SAÍDA/ENTRADA PARA PAU D"ARCO Redenção, PA,</p>
             <p><b className="fixedText">Sentido:</b> Norte/Sul</p>

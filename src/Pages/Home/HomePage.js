@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './HomePage.css';
 import ButtonModal from '../../Components/ButtonModal/ButtonModal'
 import { BgImage } from '../../Components/bgImage/BgImage';
 
 const HomePage = () => {
-
+    
     return (
         <div className='container'>
             <BgImage />

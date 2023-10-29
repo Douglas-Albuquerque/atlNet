@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ConfigProvider, Modal } from 'antd';
-import { createStyles, useTheme } from 'antd-style';
+import { createStyles} from 'antd-style';
 import Pag from '../Pagination/Pagination';
 import Screens from './Screens';
 
@@ -33,10 +33,9 @@ const useStyle = createStyles(({ token }) => ({
 
 
 }));
-const InfoModal = ({ openModal, closeModal }) => {
-  const [countPage, setCountPage] = useState(2);
+const InfoModal = ({ openModal, closeModal, data }) => {
+  const [countPage, setCountPage] = useState(1);
   const { styles } = useStyle();
-  const token = useTheme();
   const goToNextPage = () => {
     if (countPage < 3) {
       setCountPage(countPage + 1);
@@ -47,7 +46,6 @@ const InfoModal = ({ openModal, closeModal }) => {
       setCountPage(countPage - 1);
     }
   };
-  console.log(countPage);
   const classNames = {
     body: styles['my-modal-body'],
     mask: styles['my-modal-mask'],
@@ -77,6 +75,7 @@ const InfoModal = ({ openModal, closeModal }) => {
       marginLeft: '-200px'
     },
   };
+  console.log(data);
   useEffect(() => { }, [countPage])
   return (
     <>

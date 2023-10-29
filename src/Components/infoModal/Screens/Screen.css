@@ -1,8 +1,14 @@
 .fixedText {
     margin-right: 5px;
-
+    margin-left: 5px;
 }
-
+.screen1title{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    margin: 0;
+    font-weight: bold;
+}
 .colText {
     margin-right: 5px;
     font-weight: bold;
@@ -31,4 +37,25 @@
 .hrStyle {
     display: flex;
     flex-direction: row;
+}
+.containerScree3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.paragTitle{
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+}
+.paragLabels{
+    margin: 0;
+    font-weight: bold;
+}
+.divisionLine{
+   flex-direction: row;
+   width: 300px;
+   border: 1px solid #1F4070;
+   margin-top: 0;
 }

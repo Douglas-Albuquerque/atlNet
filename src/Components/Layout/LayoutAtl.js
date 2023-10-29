@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LayoutAtl.css';
 import logoImgMenu from '../../img/atl.png';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 //import LayoutAtl from "../Components/Layout/LayoutAtl"
 import HomePage from "../../Pages/Home/HomePage";
 import CreateEquip from "../../Pages/CreateEquip/CreateEquip";
@@ -14,7 +14,7 @@ import {
     VideoCameraOutlined,
     UsergroupAddOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Button, theme, ConfigProvider, } from 'antd';
+import { Layout, Menu, Button, ConfigProvider, } from 'antd';
 const { Header, Sider, Content } = Layout;
 
 const LayoutAtl = () => {
@@ -23,7 +23,6 @@ const LayoutAtl = () => {
     const [collapsed, setCollapsed] = useState(true);
 
     return (
-
         <Layout>
             <ConfigProvider
                 theme={{

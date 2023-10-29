@@ -2,7 +2,6 @@ import React from 'react';
 import './Pagination.css'
 import {LeftOutlined,RightOutlined}from '@ant-design/icons';
 function Pag({ nextPage, previousPage, countPage }) {
-  console.log('pag',countPage);
   return (
 
     <div className='footerContainer'>
