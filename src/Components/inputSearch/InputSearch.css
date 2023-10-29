@@ -1,0 +1,29 @@
+.containerSearch{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+}
+.inputEquip{
+  background-color: transparent;
+  border: 0;
+  width: 180px;
+  height: 35px;
+  border: 2px solid #1F4070;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  text-align: center;
+}
+.inputButton{
+  color: white;
+  background-color: #1F4070;
+  border: 0;
+  width: 35px;
+  height: 35px;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+  cursor: pointer;
+}
+textarea:focus, input:focus{
+  outline: 0;
+}

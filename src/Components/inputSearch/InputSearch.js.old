@@ -1,0 +1,28 @@
+import { ConfigProvider, Input, Space } from 'antd';
+import React, { useState } from 'react';
+const { Search } = Input;
+
+const InputEquip = ({ openModal, value, onChangeText }) => (
+  <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: "#1F4070",
+      }
+    }}
+  >
+    <Space
+    style={{
+      paddingTop: "2rem",
+    }}
+    >
+      <Input.Search
+        placeholder="Insira o cod. Local"
+        onSearch={openModal}
+        enterButton
+        value={value}
+        onChange={onChangeText}
+      />
+    </Space>
+  </ConfigProvider>
+);
+export default InputEquip;
