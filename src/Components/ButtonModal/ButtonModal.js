@@ -5,7 +5,7 @@ import './ButtonModal.css'
 import axios from 'axios';
 
 function ButtonModal() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [codEquip, setIscodEquip] = useState("");
   const [data, setData] = useState([]);
   async function searchEquip(){
