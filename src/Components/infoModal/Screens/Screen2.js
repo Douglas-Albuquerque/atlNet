@@ -2,7 +2,8 @@ import React from "react";
 import { Col, Row } from 'antd';
 import './Screen.css'
 
-const Screen2 = () => {
+const Screen2 = ({ data }) => {
+    console.log(data);
     return (
         <div>
             <div className="container1col">
@@ -12,7 +13,7 @@ const Screen2 = () => {
                             IP WAN:
                         </Col>
                         <Col className="col2Text">
-                            177.XX.138.xxx
+                            {data.ipWan}
                         </Col>
                     </Row>
                     <Row>
@@ -20,7 +21,7 @@ const Screen2 = () => {
                             IP PC LAN:
                         </Col>
                         <Col className="col2Text">
-                            177.XX.138.xxx
+                            {data.ipLan}
                         </Col>
                     </Row>
                     <Row>
@@ -28,7 +29,7 @@ const Screen2 = () => {
                             IP PC VPN:
                         </Col>
                         <Col className="col2Text">
-                            177.XX.138.xxx
+                            {data.ipVpn}
                         </Col>
                     </Row>
                     <Row>
@@ -36,7 +37,7 @@ const Screen2 = () => {
                             IP CAM 1:
                         </Col>
                         <Col className="col2Text">
-                            177.XX.138.xxx
+                            {data.ipCam1}
                         </Col>
                     </Row>
                     <Row>
@@ -44,7 +45,7 @@ const Screen2 = () => {
                             IP CAM 2:
                         </Col>
                         <Col className="col2Text">
-                            177.XX.138.xxx
+                            {data.ipCam2}
                         </Col>
                     </Row>
                 </div>
@@ -63,7 +64,7 @@ const Screen2 = () => {
                                 ATSMSBLITZ:
                             </Col>
                             <Col className="col2Text">
-                                8090
+                                {data.PortaInt.atsmsblitz}
                             </Col>
                         </Row>
                         <Row>
@@ -71,7 +72,7 @@ const Screen2 = () => {
                                 SSH:
                             </Col>
                             <Col className="col2Text">
-                                22222
+                                {data.PortaInt.ssh}
                             </Col>
                         </Row>
                         <Row>
@@ -79,7 +80,7 @@ const Screen2 = () => {
                                 RTSP CAM 1:
                             </Col>
                             <Col className="col2Text">
-                                554
+                                {data.PortaInt.rtspCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -87,7 +88,7 @@ const Screen2 = () => {
                                 RTSP CAM 2:
                             </Col>
                             <Col className="col2Text">
-                                555
+                                {data.PortaInt.rtspCam2}
                             </Col>
                         </Row>
                         <Row>
@@ -95,7 +96,7 @@ const Screen2 = () => {
                                 HTTP CAM 1:
                             </Col>
                             <Col className="col2Text">
-                                8164
+                                {data.PortaInt.httpCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -103,7 +104,7 @@ const Screen2 = () => {
                                 HTTP CAM 2:
                             </Col>
                             <Col className="col2Text">
-                                8165
+                                {data.PortaInt.httpCam2}
                             </Col>
                         </Row>
                         <Row>
@@ -111,7 +112,7 @@ const Screen2 = () => {
                                 HTTP MIKROTIK:
                             </Col>
                             <Col className="col2Text">
-                                8001
+                                {data.PortaInt.httpMikrotik}
                             </Col>
                         </Row>
                         <Row>
@@ -119,7 +120,7 @@ const Screen2 = () => {
                                 NVR CAM 1:
                             </Col>
                             <Col className="col2Text">
-                                8000
+                                {data.PortaInt.nvrCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -127,7 +128,7 @@ const Screen2 = () => {
                                 NVR CAM 2:
                             </Col>
                             <Col className="col2Text">
-                                8888
+                                {data.PortaInt.nvrCam2}
                             </Col>
                         </Row>
                     </Col>
@@ -147,7 +148,7 @@ const Screen2 = () => {
                                 ATSMSBLITZ:
                             </Col>
                             <Col className="col2Text">
-                                8090
+                                {data.PortaExt.atsmsblitz}
                             </Col>
                         </Row>
                         <Row>
@@ -155,7 +156,7 @@ const Screen2 = () => {
                                 SSH:
                             </Col>
                             <Col className="col2Text">
-                                22222
+                                {data.PortaExt.ssh}
                             </Col>
                         </Row>
                         <Row>
@@ -163,7 +164,7 @@ const Screen2 = () => {
                                 RTSP CAM 1:
                             </Col>
                             <Col className="col2Text">
-                                554
+                                {data.PortaExt.rtspCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -171,7 +172,7 @@ const Screen2 = () => {
                                 RTSP CAM 2:
                             </Col>
                             <Col className="col2Text">
-                                555
+                                {data.PortaExt.rtspCam2}
                             </Col>
                         </Row>
                         <Row>
@@ -179,7 +180,7 @@ const Screen2 = () => {
                                 HTTP CAM 1:
                             </Col>
                             <Col className="col2Text">
-                                8164
+                                {data.PortaExt.httpCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -187,7 +188,7 @@ const Screen2 = () => {
                                 HTTP CAM 2:
                             </Col>
                             <Col className="col2Text">
-                                8165
+                                {data.PortaExt.httpCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -195,7 +196,7 @@ const Screen2 = () => {
                                 HTTP MIKROTIK:
                             </Col>
                             <Col>
-                                8001
+                                {data.PortaExt.httpMikrotik}
                             </Col>
                         </Row>
                         <Row>
@@ -203,7 +204,7 @@ const Screen2 = () => {
                                 NVR CAM 1:
                             </Col>
                             <Col className="col2Text">
-                                8000
+                                {data.PortaExt.nvrCam1}
                             </Col>
                         </Row>
                         <Row>
@@ -211,7 +212,7 @@ const Screen2 = () => {
                                 NVR CAM 2:
                             </Col>
                             <Col className="col2Text">
-                                8888
+                                {data.PortaExt.nvrCam2}
                             </Col>
                         </Row>
                     </Col>

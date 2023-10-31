@@ -3,6 +3,11 @@ import React from 'react';
 import './InputSearch.css'
 
 function InputEquip({ openModal, value, onChangeText }) {
+  const handleKeyUp = (event) => {
+    if (event.key === 'Enter') {
+      openModal();
+    }
+  }
   return (
     <div className='containerSearch'>
       <div>
@@ -10,12 +15,13 @@ function InputEquip({ openModal, value, onChangeText }) {
           placeholder='Insira o Cod. Equipamento'
           value={value}
           onChange={onChangeText}
+          onKeyUp={handleKeyUp}
         >
         </input>
       </div>
       <div>
         <button className='inputButton'
-        onClick={openModal}
+          onClick={openModal}
         >
           <SearchOutlined
             style={{

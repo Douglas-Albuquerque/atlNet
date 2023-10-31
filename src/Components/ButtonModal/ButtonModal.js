@@ -5,7 +5,7 @@ import './ButtonModal.css'
 import axios from 'axios';
 
 function ButtonModal() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [codEquip, setIscodEquip] = useState("");
   const [data, setData] = useState([]);
   async function searchEquip(){
@@ -13,13 +13,11 @@ function ButtonModal() {
     {codEquip: codEquip}
     ).then(
       response => {
-        console.log(response.data);
         setData(response.data[0]);
         setIsModalOpen(true);
       }
     ).catch(
       err => {
-        console.log(err);
       }
     )
   };

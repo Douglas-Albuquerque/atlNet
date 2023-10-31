@@ -1,25 +1,89 @@
 import React from "react";
 import './Screen.css'
 
-function Screen3() {
+function Screen3({ data }) {
     return (
         <div className="containerScree3">
             <p className="paragTitle">ACESSOS</p>
             <hr className="divisionLine"></hr>
+
             <p className="paragLabels">ATSMSBLITZ:</p>
-            <a href="google.com" className="linkContent">http://177.92.XXX.XXX:XXXX/atsmsblitz</a>
+
+            <a href={"http://" + data.ipWan + ":" + data.PortaExt.atsmsblitz + "/atsmsblitz"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkContent">
+                {(data.PortaExt.atsmsblitz !== "-")
+                    ? "http://" + data.ipWan + ":" + data.PortaExt.atsmsblitz + "/atsmsblitz"
+                    : "-"
+                }
+            </a>
+
             <p className="paragLabels">SSH:</p>
-            <a href="google.com" className="linkContent">ssh atlanta@177.XXX.XXX.198 -p 22222</a>
+
+            <span>
+                {(data.sshUser !== "-")
+                    ? "ssh " + data.sshUser + "@" + data.ipWan + " -p " + data.PortaExt.ssh
+                    : "-"
+                }
+            </span>
+
             <p className="paragLabels">RTSP CAM 1:</p>
-            <a href="google.com" className="linkContent">rtsp://admin:RDC58ats210@177.XXX.XXX.198:554/Streaming/Channels/101?transportmode=multicast</a>
+
+            <span>
+                {(data.PortaExt.rtspCam1 === "-")
+                    ? "-"
+                    : "rtsp://" + data.rtspUser + ":" + data.rtspSenha + "@" + data.ipWan + ":" + data.PortaExt.rtspCam1 + "/Streaming/Channels/101?transportmode=multicast"
+                }
+            </span>
+
             <p className="paragLabels">RTSP CAM 2:</p>
-            <a href="google.com" className="linkContent">rtsp://admin:RDC58ats210@177.XXX.XXX.198:554/Streaming/Channels/101?transportmode=multicast</a>
+
+            <span>
+                {(data.PortaExt.rtspCam2 === "-")
+                    ? "-"
+                    : "rtsp://" + data.rtspUser + ":" + data.rtspSenha + "@" + data.ipWan + ":" + data.PortaExt.rtspCam2 + "/Streaming/Channels/101?transportmode=multicast"
+                }
+            </span>
+
             <p className="paragLabels">HTTP CAM 2:</p>
-            <a href="google.com" className="linkContent">http://177.XXX.XXX.198:8164</a>
+
+            <a
+                href={"http://" + data.ipWan + ":" + data.PortaExt.httpCam1}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkContent">
+                {(data.PortaExt.httpCam1 !== "-")
+                    ? "http://" + data.ipWan + ":" + data.PortaExt.httpCam1
+                    : "-"
+                }
+            </a>
+
             <p className="paragLabels">HTTP CAM 2:</p>
-            <a href="google.com" className="linkContent">http://177.XXX.XXX.198:8164</a>
+
+            <a
+                href={"http://" + data.ipWan + ":" + data.PortaExt.httpCam2}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkContent">
+                {(data.PortaExt.httpCam2 !== "-")
+                    ? "http://" + data.ipWan + ":" + data.PortaExt.httpCam2
+                    : "-"
+                }
+            </a>
+
             <p className="paragLabels">HTTP MIKROTIK:</p>
-            <a href="google.com" className="linkContent">http://177.XXX.XXX.198:8164</a>
+
+            <a
+                href={"http://" + data.ipWan + ":" + data.PortaExt.httpMikrotik}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkContent">
+                {(data.PortaExt.httpMikrotik !== "-")
+                    ? "http://" + data.ipWan + ":" + data.PortaExt.httpMikrotik
+                    : "-"
+                }
+            </a>
 
         </div>
     )
