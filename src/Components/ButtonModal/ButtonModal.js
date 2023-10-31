@@ -13,13 +13,11 @@ function ButtonModal() {
     {codEquip: codEquip}
     ).then(
       response => {
-        console.log(response.data);
         setData(response.data[0]);
         setIsModalOpen(true);
       }
     ).catch(
       err => {
-        console.log(err);
       }
     )
   };

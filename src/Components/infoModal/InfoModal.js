@@ -75,7 +75,7 @@ const InfoModal = ({ openModal, closeModal, data }) => {
       marginLeft: '-200px'
     },
   };
-  console.log(data);
+  
   useEffect(() => { }, [countPage])
   return (
     <>
@@ -104,6 +104,7 @@ const InfoModal = ({ openModal, closeModal, data }) => {
         >
           <Screens
             countPage={countPage}
+            data={data}
           />
         </Modal>
       </ConfigProvider>
