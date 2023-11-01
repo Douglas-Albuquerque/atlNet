@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './LayoutAtl.css';
 import logoImgMenu from '../../img/atl.png';
 import { Routes, Route, useNavigate } from "react-router-dom";
-//import LayoutAtl from "../Components/Layout/LayoutAtl"
 import HomePage from "../../Pages/Home/HomePage";
 import CreateEquip from "../../Pages/CreateEquip/CreateEquip";
+import Contracts from "../../Pages/Contracts/Contracts";
 
 import {
     HomeOutlined,
@@ -15,6 +15,7 @@ import {
     UsergroupAddOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, Button, ConfigProvider, } from 'antd';
+
 const { Header, Sider, Content } = Layout;
 
 const LayoutAtl = () => {
@@ -111,7 +112,7 @@ const LayoutAtl = () => {
                 >
                     <div>
                         <Routes>
-                            {/* <Route path="/" element={<LoginPage />} /> */}
+                            {<Route path="contracts" element={<Contracts />} />}
                             <Route path="/" element={<HomePage />} />
                             <Route path="createequip" element={<CreateEquip />} />
                             {/* <Route path="*" element={<NotFound />} /> */}
