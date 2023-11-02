@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from "../../Pages/Home/HomePage";
 import CreateEquip from "../../Pages/CreateEquip/CreateEquip";
 import Contracts from "../../Pages/Contracts/Contracts";
+import Equipaments from '../../Pages/Equipaments/Equipaments';
 
 import {
     HomeOutlined,
@@ -76,7 +77,7 @@ const LayoutAtl = () => {
                                 label: 'Cadastro de Equipamentos',
                             },
                             {
-                                key: '2',
+                                key: '/contracts',
                                 icon: <VideoCameraOutlined />,
                                 label: 'Equipamentos',
                             },
@@ -115,6 +116,7 @@ const LayoutAtl = () => {
                             {<Route path="contracts" element={<Contracts />} />}
                             <Route path="/" element={<HomePage />} />
                             <Route path="createequip" element={<CreateEquip />} />
+                            <Route path="equipamentos/:item" element={<Equipaments />} />
                             {/* <Route path="*" element={<NotFound />} /> */}
                         </Routes>
                     </div>

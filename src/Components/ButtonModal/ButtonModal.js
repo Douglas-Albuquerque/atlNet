@@ -9,7 +9,7 @@ function ButtonModal() {
   const [codEquip, setIscodEquip] = useState("");
   const [data, setData] = useState([]);
   async function searchEquip(){
-    await axios.post("http://localhost:3001/searcEquipById", 
+    await axios.post("http://localhost:3001/searchEquipById", 
     {codEquip: codEquip}
     ).then(
       response => {
