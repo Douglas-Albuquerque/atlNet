@@ -1,25 +1,16 @@
-.containerButtons {
-    display: flex;
-    flex-direction: column;
-}
-
-.teste {
-    margin-top: 10px;
-    /* Espaçamento entre os botões (ajuste conforme necessário) */
-}
-
 .contractButton {
-    background-color: royalblue;
+    background-color: #1F4070;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
     font-size: 16px;
-    margin: 0;
-    /* Adicionado para remover a margem padrão do botão */
+    margin-right: 15px;
+    width: 150px;
+
 }
 
 .contractButton:hover {
-    background-color: darkblue;
+    background-color: royalblue;
 }

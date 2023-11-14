@@ -29,7 +29,7 @@ const Contracts = () => {
     return (
         <div className='container'>
             <BgImage />
-            <div className='content'>
+            <div className='contentContract'>
                 {data.map((item, index) => (
                     <ButtonContract
                         key={index}
