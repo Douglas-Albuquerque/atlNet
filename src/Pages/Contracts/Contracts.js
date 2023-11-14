@@ -13,7 +13,7 @@ const Contracts = () => {
         navigate("/equipamentos/:item", { item: item })
     }
     async function getEquip() {
-        await axios.get("http://localhost:3001/searchContract")
+        await axios.get("http://34.228.96.239:3001/searchContract")
             .then(
                 response => {
                     setData(response.data)

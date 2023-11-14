@@ -8,9 +8,9 @@ function ButtonModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [codEquip, setIscodEquip] = useState("");
   const [data, setData] = useState([]);
-  async function searchEquip(){
-    await axios.post("http://localhost:3001/searchEquipById", 
-    {codEquip: codEquip}
+  async function searchEquip() {
+    await axios.post("http://34.228.96.239:3001/searchEquipById",
+      { codEquip: codEquip }
     ).then(
       response => {
         setData(response.data[0]);
@@ -32,7 +32,7 @@ function ButtonModal() {
         <InputSearch
           openModal={() => searchEquip()}
           value={codEquip}
-          onChangeText={(e)=>setIscodEquip(e.target.value)}
+          onChangeText={(e) => setIscodEquip(e.target.value)}
         />
       </div>
     </div>
