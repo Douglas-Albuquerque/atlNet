@@ -1,29 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BgImage } from '../../Components/bgImage/BgImage';
-import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+import ButtonEquipament from '../../Components/ButtonEquipament/ButtonEquipament';
 
 const Equipaments = () => {
-    const {item} = useParams();
-    console.log(item);
+    const [data, setData] = useState([]);
+    console.log(data);
+    async function postEquip() {
+        await axios.post("http://34.228.96.239:3001/searchEquipById")
+            .then(
+                response => {
+                    setData(response.data)
+                }
+            ).catch(
+                err => {
+                }
+            )
+    }
+    useEffect(() => {
+        postEquip()
+    }, [])
     return (
         <div className='container'>
             <BgImage />
             <div className='content'>
-                <button
-               
-                >
-                    ATS94301
-                </button>
-                <button
-               
-                >
-                    ATS94302
-                </button>
-                <button
-               
-                >
-                    ATS94303
-                </button>
+                <ButtonEquipament />
+                {/* {data.map((item, index) => (
+                    <ButtonEquipament
+                        key={index}
+                        name={item.codEquip}
+                    />
+                ))} */}
             </div>
         </div>
     );
