@@ -9,7 +9,7 @@ function ButtonModal() {
   const [codEquip, setIscodEquip] = useState("");
   const [data, setData] = useState([]);
   async function searchEquip() {
-    await axios.post("http://34.228.96.239:3001/searchEquipById",
+    await axios.post("http://atlnetserver.ddns.net:3001/searchEquipById",
       { codEquip: codEquip }
     ).then(
       response => {

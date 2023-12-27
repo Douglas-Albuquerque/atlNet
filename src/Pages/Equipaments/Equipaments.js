@@ -8,7 +8,7 @@ const Equipaments = () => {
     const [data, setData] = useState([]);
     console.log(data);
     async function postEquip() {
-        await axios.post("http://34.228.96.239:3001/searchEquipById")
+        await axios.post("http://atlnetserver.ddns.net:3001/searchEquipById")
             .then(
                 response => {
                     setData(response.data)
