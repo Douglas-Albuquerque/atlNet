@@ -9,14 +9,15 @@ const Contracts = () => {
 
     const [data, setData] = useState([]);
     const navigate = useNavigate()
-    function navEquip(item) {
-        navigate("/equipamentos/:item", { item: item })
+    function navEquip(equipments) {
+        navigate(`/equipamentos/${encodeURIComponent(JSON.stringify(equipments))}`)
     }
     async function getEquip() {
         await axios.get("http://atlnetserver.ddns.net:3001/searchContract")
             .then(
                 response => {
                     setData(response.data)
+                    console.log(response.data);
                 }
             ).catch(
                 err => {
@@ -30,9 +31,9 @@ const Contracts = () => {
         <div className='container'>
             <BgImage />
             <div className='contentContract'>
-                {data.map((item, index) => (
+                    {data.map((item, id) => (
                     <ButtonContract
-                        key={index}
+                        key={id}
                         name={item.nameContract}
                         onClick={() => navEquip(item.Equipaments)}
                     />

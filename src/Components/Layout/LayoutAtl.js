@@ -113,7 +113,7 @@ const LayoutAtl = () => {
                 >
                     <div>
                         <Routes>
-                            {<Route path="contracts" element={<Contracts />} />}
+                            <Route path="contracts" element={<Contracts />} />
                             <Route path="/" element={<HomePage />} />
                             <Route path="createequip" element={<CreateEquip />} />
                             <Route path="equipamentos/:item" element={<Equipaments />} />
