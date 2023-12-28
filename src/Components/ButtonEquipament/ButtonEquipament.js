@@ -1,13 +1,13 @@
 import React from "react";
 import "./ButtonEquipament.css"
 
-function ButtonEquipament({name}) {
-    console.log(name);
+function ButtonEquipament({name, onClick, data}) {
+    console.log(data);
     return (
-        <div className="containerEquip">
+        <div className="containerButtons">
             <button
-                className="contentEquip"
-                /* onClick={onClick} */
+                className="equipButton"
+                onClick={onClick}
             >
                 {name}
             </button>

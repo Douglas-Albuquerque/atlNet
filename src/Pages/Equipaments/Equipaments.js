@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { BgImage } from '../../Components/bgImage/BgImage';
 import ButtonEquipament from '../../Components/ButtonEquipament/ButtonEquipament';
+import './Equipaments.css'
 
 const Equipaments = () => {
     const [equipments, setEquipments] = useState([]);
     const location = useLocation();
+
 
     useEffect(() => {
         const { pathname } = location;
@@ -24,11 +26,12 @@ const Equipaments = () => {
     return (
         <div className='container'>
             <BgImage />
-            <div className='content'>
+            <div className='contentEquipaments'>
                 {equipments.map((item, id) => (
                     <ButtonEquipament
                         key={id}
                         name={item.codEquip}
+                        data={item}
                     />
                 ))}
             </div>
