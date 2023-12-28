@@ -1,40 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BgImage } from '../../Components/bgImage/BgImage';
-import axios from 'axios';
-
 import ButtonEquipament from '../../Components/ButtonEquipament/ButtonEquipament';
+import './Equipaments.css'
 
 const Equipaments = () => {
-    const [data, setData] = useState([]);
-    console.log(data);
-    async function postEquip() {
-        await axios.post("http://atlnetserver.ddns.net:3001/searchEquipById")
-            .then(
-                response => {
-                    setData(response.data)
-                }
-            ).catch(
-                err => {
-                }
-            )
-    }
+    const [equipments, setEquipments] = useState([]);
+    const location = useLocation();
+
+
     useEffect(() => {
-        postEquip()
-    }, [])
+        const { pathname } = location;
+        const equipmentData = pathname.split('/equipamentos/')[1];
+        if (equipmentData) {
+            try {
+                const decodedData = decodeURIComponent(equipmentData);
+                const parsedEquipmentData = JSON.parse(decodedData);
+                setEquipments(parsedEquipmentData);
+            } catch (error) {
+                console.error('Erro ao processar dados dos equipamentos:', error);
+            }
+        }
+    }, [location]);
+
     return (
         <div className='container'>
             <BgImage />
-            <div className='content'>
-                <ButtonEquipament />
-                {/* {data.map((item, index) => (
+            <div className='contentEquipaments'>
+                {equipments.map((item, id) => (
                     <ButtonEquipament
-                        key={index}
+                        key={id}
                         name={item.codEquip}
+                        data={item}
                     />
-                ))} */}
+                ))}
             </div>
         </div>
     );
-
 };
+
 export default Equipaments;

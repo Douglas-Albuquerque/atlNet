@@ -1,4 +1,4 @@
-.contentEquip {
+.equipButton {
     background-color: #1F4070;
     color: white;
     border: none;
@@ -11,6 +11,6 @@
 
 }
 
-.contentEquip:hover {
+.equipButton:hover {
     background-color: royalblue;
 }
