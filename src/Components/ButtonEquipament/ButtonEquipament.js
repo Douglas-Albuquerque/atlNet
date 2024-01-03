@@ -1,17 +1,23 @@
 import React from "react";
-import "./ButtonEquipament.css"
+import "./ButtonEquipament.css";
 
-function ButtonEquipament({name, onClick, data}) {
+function ButtonEquipament({ name, onClick, data, openModal }) {
     console.log(data);
+
+    const handleClick = () => {
+        openModal(data);
+        if (onClick) {
+            onClick();
+        }
+    };
+
     return (
         <div className="containerButtons">
-            <button
-                className="equipButton"
-                onClick={onClick}
-            >
+            <button className="equipButton" onClick={handleClick}>
                 {name}
             </button>
         </div>
-    )
+    );
 }
-export default ButtonEquipament
+
+export default ButtonEquipament;
