@@ -8,7 +8,7 @@ import Contracts from "../../Pages/Contracts/Contracts";
 import Equipaments from '../../Pages/Equipaments/Equipaments';
 
 import {
-    HomeOutlined,
+    SearchOutlined,
     PlusCircleOutlined,
     MenuUnfoldOutlined,
     UserOutlined,
@@ -67,19 +67,19 @@ const LayoutAtl = () => {
                         items={[
                             {
                                 key: '/',
-                                icon: <HomeOutlined />,
-                                label: 'Home',
+                                icon: <VideoCameraOutlined />,
+                                label: 'Equipamentos',
+                            },
+                            {
+                                key: '/search',
+                                icon: <SearchOutlined />,
+                                label: 'Buscar',
 
                             },
                             {
                                 key: '/createequip',
                                 icon: <PlusCircleOutlined />,
-                                label: 'Cadastro de Equipamentos',
-                            },
-                            {
-                                key: '/contracts',
-                                icon: <VideoCameraOutlined />,
-                                label: 'Equipamentos',
+                                label: 'Cadastro',
                             },
                             {
                                 key: '4',
@@ -113,8 +113,8 @@ const LayoutAtl = () => {
                 >
                     <div>
                         <Routes>
-                            <Route path="contracts" element={<Contracts />} />
-                            <Route path="/" element={<HomePage />} />
+                            <Route path="/" element={<Contracts />} />
+                            <Route path="search" element={<HomePage />} />
                             <Route path="createequip" element={<CreateEquip />} />
                             <Route path="equipamentos/:item" element={<Equipaments />} />
                             {/* <Route path="*" element={<NotFound />} /> */}

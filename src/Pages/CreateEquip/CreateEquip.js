@@ -2,48 +2,51 @@ import React from "react";
 
 function CreateEquip() {
     return (
-        <h1>Somehow I know
-            That things are gonna change
-            New boundaries on the way
-            Like never were before
-            Find a meaning to your life
-            Healing whispers of the angels
-            Bring the sunrise again
+        <div>
+            <h2>NOVA ERA</h2>
+            <p>Somehow I know</p>
+            <p>That things are gonna change</p>
+            <p>New boundaries on the way</p>
+            <p>Like never were before</p>
+            <p>Find a meaning to your life</p>
+            <p>Healing whispers of the angels</p>
+            <p>Bring the sunrise again</p>
 
-            New day shines, fallen angels will arise
-            Nova Era brings the ashes back to life
-            (Bring ashes back to life)
-            All over now, all the pain and awful lies
-            Angels will arise back to life
+            <p>New day shines, fallen angels will arise</p>
+            <p>Nova Era brings the ashes back to life</p>
+            <p>(Bring ashes back to life)</p>
+            <p>All over now, all the pain and awful lies</p>
+            <p>Angels will arise back to life</p>
 
-            Fresh winds of hope
-            Has taken us ahead
-            Forever is a place you have to keep in mind
-            No way to limit our goals
-            We'll find a reason to believe
-            Facing Nova Era
+            <p>Fresh winds of hope</p>
+            <p>Has taken us ahead</p>
+            <p>Forever is a place you have to keep in mind</p>
+            <p>No way to limit our goals</p>
+            <p>We'll find a reason to believe</p>
+            <p>Facing Nova Era</p>
 
-            New day shines, fallen angels will arise
-            Nova Era brings the ashes back to life
-            (Bring ashes back to life)
-            All over now, all the pain and awful lies
-            Angels will arise back to life
+            <p>New day shines, fallen angels will arise</p>
+            <p>Nova Era brings the ashes back to life</p>
+            <p>(Bring ashes back to life)</p>
+            <p>All over now, all the pain and awful lies</p>
+            <p>Angels will arise back to life</p>
 
-            Come on, arise
+            <p>Come on, arise</p>
 
-            Find a meaning to your life
-            No way to limit our goals
-            Healing whispers of the angels bring the sunrise again
+            <p>Find a meaning to your life</p>
+            <p>No way to limit our goals</p>
+            <p>Healing whispers of the angels bring the sunrise again</p>
 
-            New day shines, fallen angels will arise
-            Nova Era brings the ashes back to life (all over now)
-            All over now, sores in pain and awful lies
-            Angels lead you through paradise
+            <p>New day shines, fallen angels will arise</p>
+            <p>Nova Era brings the ashes back to life (all over now)</p>
+            <p>All over now, sores in pain and awful lies</p>
+            <p>Angels lead you through paradise</p>
 
-            Nova Era is the passage to your mind
-            And forever you may find a better time
-            Nova Era brings the angels back to life
-            Life!</h1>
+            <p>Nova Era is the passage to your mind</p>
+            <p>And forever you may find a better time</p>
+            <p>Nova Era brings the angels back to life</p>
+            <p>Life!</p>
+        </div>
     )
 };
 
