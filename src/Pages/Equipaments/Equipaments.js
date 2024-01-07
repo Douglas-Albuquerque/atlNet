@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { BgImage } from '../../Components/bgImage/BgImage';
-import ButtonEquipament from '../../Components/ButtonEquipament/ButtonEquipament';
+import { BgImage } from '../../Components/bgImage/BgImage.js';
+import ButtonEquipament from '../../Components/ButtonEquipament/ButtonEquipament.js';
 import InfoModal from '../../Components/infoModal/InfoModal.js';
 
 import './Equipaments.css';

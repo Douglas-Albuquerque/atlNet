@@ -1,5 +1,5 @@
 import React from "react";
-import bgImg from "../../img/atl_azul.png";
+import bgImg from "../../assets/atl_azul.png";
 import './BgImage.css'
 
 
