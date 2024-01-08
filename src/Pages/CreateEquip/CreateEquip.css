@@ -3,109 +3,126 @@
 
 }
 
-.title{
+.title {
     padding: 15px;
+    font-size: 30px;
 }
+
 .Formbutton {
-    grid-column: span 4;
-    background-color: #007bff;
+    background-color: #1F4070;
     color: white;
     border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
     font-size: 16px;
+    margin-right: 15px;
+    width: 150px;
+    margin: 2rem;
 }
 
 .Formbutton:hover {
-    background-color: #0056b3;
+    background-color: royalblue;
     cursor: pointer;
 }
-.container0 {
+
+.containerEquip {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100vh;
     margin: 0 auto;
     padding: 20px;
-    margin-right: 300px;
+    margin-right: 25rem;
 }
 
-.container0 label {
+.containerEquip label {
     text-align: left;
     font-weight: bold;
 }
 
-.container0 input {
+.labelExtra {
+    width: 180px;
+}
+
+.containerEquip input {
     width: 180px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.enderecoInput input{
-    width: 500px;
+
+.enderecoInput input {
+    width: 700px;
 }
-.container1 {
+
+.containerIp {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     width: 100vh;
     margin: 0 auto;
     padding: 20px;
-    margin-right: 300px;
+    margin-right: 25rem;
 }
 
-.container1 label {
+.containerIp label {
     text-align: left;
     font-weight: bold;
 }
 
-.container1 input {
+.labelObs input {
+    width: 300px;
+}
+
+.containerIp input {
     width: 180px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.container2 {
+
+.containerPorts {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     width: 100vh;
     margin: 0 auto;
     padding: 20px;
-    margin-right: 300px;
+    margin-right: 25rem;
 }
 
-.container2 label {
+.containerPorts label {
     text-align: left;
     font-weight: bold;
 }
 
-.container2 input {
+.containerPorts input {
     width: 180px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.container3 {
+
+.containerExtPorts {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     width: 100vh;
     margin: 0 auto;
     padding: 20px;
-    margin-right: 300px;
+    margin-right: 25rem;
 }
 
-.container3 label {
+.containerExtPorts label {
     text-align: left;
     font-weight: bold;
 }
 
-.container3 input {
+.containerExtPorts input {
     width: 180px;
     padding: 8px;
     border: 1px solid #ccc;
