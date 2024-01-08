@@ -5,18 +5,36 @@ import "./CreateEquip.css"
 export const CreateEquip = () => {
 
     const [formValues, setFormValues] = useState({
-        idContrato: '123',
-        codEquip: 'ABC123',
-        ipWan: "132.255.228.169",
+        ipWan: "",
         ipLan: "10.254.254.254",
-        ipVpn: "192.168.103.2",
+        ipVpn: "",
         ipCam1: "10.254.254.64",
-        ipCam2: "-",
+        ipCam2: "",
         tipoEquip: "LPR FIXO",
-        obs: "-",
         sshUser: "atlanta",
         rtspUser: "admin",
         rtspSenha: "F0RSatl1",
+        obs: "",
+        //portas intertnas
+        iatsmsblitz: "8090",
+        issh: "22222",
+        irtspCam1: "554",
+        irtspCam2: "",
+        ihttpCam1: "8164",
+        ihttpCam2: "",
+        ihttpMikrotik: "8001",
+        invrCam1: "8888",
+        invrCam2: "",
+        //portas externas
+        atsmsblitz: "8090",
+        ssh: "22222",
+        rtspCam1: "554",
+        rtspCam2: "",
+        httpCam1: "8164",
+        httpCam2: "",
+        httpMikrotik: "8001",
+        nvrCam1: "8888",
+        nvrCam2: "",
     });
 
     const handleChange = (e) => {
@@ -41,6 +59,7 @@ export const CreateEquip = () => {
                     <label>
                         Código do Equipamento
                         <input
+                            placeholder='ATS94301'
                             type="text"
                             name="codEquip"
                             value={formValues.codEquip}
@@ -50,15 +69,19 @@ export const CreateEquip = () => {
                     <label className='enderecoInput'>
                         Endereço
                         <input
+                            placeholder='Av. AGENOR GONÇALVES APOS HOSPITAL 5 DE OUTUBRO (ENTRADA) Canaã dos Carajás - PA'
                             type="text"
                             name="endereco"
                             value={formValues.endereco}
                             onChange={handleChange}
                         />
                     </label>
+                </div>
+                <div className="containerEquipExtra">
                     <label>
                         Sentido
                         <input
+                            placeholder='Oeste/Leste'
                             type="text"
                             name="sentido"
                             value={formValues.sentido}
@@ -68,6 +91,7 @@ export const CreateEquip = () => {
                     <label>
                         Latitude
                         <input
+                            placeholder=' -6.52349937346553'
                             type="text"
                             name="latitude"
                             value={formValues.latitude}
@@ -77,9 +101,20 @@ export const CreateEquip = () => {
                     <label className='labelExtra'>
                         Longitude
                         <input
+                            placeholder='-49.8382912521843'
                             type="text"
                             name="longitude"
                             value={formValues.longitude}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        Status
+                        <input
+                            placeholder='Ativo'
+                            type="text"
+                            name="status"
+                            value={formValues.status}
                             onChange={handleChange}
                         />
                     </label>
@@ -87,7 +122,7 @@ export const CreateEquip = () => {
                 <hr />
                 <div className="containerIp">
                     <label>
-                        IP de Wan:
+                        IP de Wan
                         <input
                             type="text"
                             name="ipWan"
@@ -96,7 +131,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        IP de Lan:
+                        IP de Lan
                         <input
                             type="text"
                             name="ipLan"
@@ -105,7 +140,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        IP de VPN:
+                        IP de VPN
                         <input
                             type="text"
                             name="ipVpn"
@@ -114,7 +149,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Câmera 1:
+                        Câmera 1
                         <input
                             type="text"
                             name="ipCam1"
@@ -123,7 +158,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Câmera 2:
+                        Câmera 2
                         <input
                             type="text"
                             name="ipCam2"
@@ -132,7 +167,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Tipo:
+                        Tipo
                         <input
                             type="text"
                             name="tipoEquip"
@@ -141,7 +176,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        SSH User:
+                        SSH User
                         <input
                             type="text"
                             name="sshUser"
@@ -150,7 +185,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        RTSP User:
+                        RTSP User
                         <input
                             type="text"
                             name="rtspUser"
@@ -159,7 +194,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Senha RTSP:
+                        Senha RTSP
                         <input
                             type="text"
                             name="rtspSenha"
@@ -167,8 +202,8 @@ export const CreateEquip = () => {
                             onChange={handleChange}
                         />
                     </label>
-                    <label className='labelObs'>
-                        Observação:
+                    <label>
+                        Observação
                         <input
                             type="text"
                             name="obs"
@@ -180,7 +215,7 @@ export const CreateEquip = () => {
                 <hr />
                 <div className="containerPorts">
                     <label>
-                        Porta Atsmsblitz:
+                        Porta Atsmsblitz
                         <input
                             type="text"
                             name="iatsmsblitz"
@@ -189,7 +224,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta SSH:
+                        Porta SSH
                         <input
                             type="text"
                             name="issh"
@@ -198,7 +233,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta RTPS Câmera 1:
+                        Porta RTPS Câmera 1
                         <input
                             type="text"
                             name="irtspCam1"
@@ -207,7 +242,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta RTPS Câmera 2:
+                        Porta RTPS Câmera 2
                         <input
                             type="text"
                             name="irtspCam2"
@@ -216,7 +251,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta HTTP Câmera 1:
+                        Porta HTTP Câmera 1
                         <input
                             type="text"
                             name="ihttpCam1"
@@ -225,7 +260,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta HTTP Câmera 1:
+                        Porta HTTP Câmera 1
                         <input
                             type="text"
                             name="ihttpCam2"
@@ -234,7 +269,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta HTTP Mikrotik:
+                        Porta HTTP Mikrotik
                         <input
                             type="text"
                             name="ihttpMikrotik"
@@ -243,7 +278,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta NVR Câmera 1:
+                        Porta NVR Câmera 1
                         <input
                             type="text"
                             name="invrCam1"
@@ -252,7 +287,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta NVR Câmera 2:
+                        Porta NVR Câmera 2
                         <input
                             type="text"
                             name="invrCam2"
@@ -264,7 +299,7 @@ export const CreateEquip = () => {
                 <hr />
                 <div className="containerExtPorts">
                     <label>
-                        Porta Ext Atsmsblitz:
+                        Porta Ext Atsmsblitz
                         <input
                             type="text"
                             name="atsmsblitz"
@@ -273,7 +308,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext SSH:
+                        Porta Ext SSH
                         <input
                             type="text"
                             name="ssh"
@@ -282,7 +317,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext RTPS Câmera 1:
+                        Porta Ext RTPS Câmera 1
                         <input
                             type="text"
                             name="rtspCam1"
@@ -291,7 +326,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext RTPS Câmera 2:
+                        Porta Ext RTPS Câmera 2
                         <input
                             type="text"
                             name="rtspCam2"
@@ -300,7 +335,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext HTTP Câmera 1:
+                        Porta Ext HTTP Câmera 1
                         <input
                             type="text"
                             name="httpCam1"
@@ -309,7 +344,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext HTTP Câmera 1:
+                        Porta Ext HTTP Câmera 1
                         <input
                             type="text"
                             name="httpCam2"
@@ -318,7 +353,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext HTTP Mikrotik:
+                        Porta Ext HTTP Mikrotik
                         <input
                             type="text"
                             name="httpMikrotik"
@@ -327,7 +362,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext NVR Câmera 1:
+                        Porta Ext NVR Câmera 1
                         <input
                             type="text"
                             name="nvrCam1"
@@ -336,7 +371,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext NVR Câmera 2:
+                        Porta Ext NVR Câmera 2
                         <input
                             type="text"
                             name="nvrCam2"
