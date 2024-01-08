@@ -1,12 +1,9 @@
+//React
 import React, { useState } from 'react';
+import { useNavigate, Outlet } from "react-router-dom";
+//Estilos
+import logoImgMenu from '../../assets/atl.png';
 import './LayoutAtl.css';
-import logoImgMenu from '../../img/atl.png';
-import { Routes, Route, useNavigate } from "react-router-dom";
-import HomePage from "../../Pages/Home/HomePage";
-import CreateEquip from "../../Pages/CreateEquip/CreateEquip";
-import Contracts from "../../Pages/Contracts/Contracts";
-import Equipaments from '../../Pages/Equipaments/Equipaments';
-
 import {
     SearchOutlined,
     PlusCircleOutlined,
@@ -82,7 +79,7 @@ const LayoutAtl = () => {
                                 label: 'Cadastro',
                             },
                             {
-                                key: '4',
+                                key: '/login',
                                 icon: <UserOutlined />,
                                 label: 'Perfil',
                             },
@@ -112,13 +109,7 @@ const LayoutAtl = () => {
                     }}
                 >
                     <div>
-                        <Routes>
-                            <Route path="/" element={<Contracts />} />
-                            <Route path="search" element={<HomePage />} />
-                            <Route path="createequip" element={<CreateEquip />} />
-                            <Route path="equipamentos/:item" element={<Equipaments />} />
-                            {/* <Route path="*" element={<NotFound />} /> */}
-                        </Routes>
+                        <Outlet/>
                     </div>
 
                 </Content>

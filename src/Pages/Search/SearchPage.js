@@ -1,9 +1,9 @@
 import React from 'react';
-import './HomePage.css';
+import './SearchPage.css';
 import ButtonModal from '../../Components/ButtonModal/ButtonModal'
 import { BgImage } from '../../Components/bgImage/BgImage';
 
-const HomePage = () => {
+const SearchPage = () => {
     
     return (
         <div className='container'>
@@ -15,4 +15,4 @@ const HomePage = () => {
     );
 
 };
-export default HomePage;
+export default SearchPage;
