@@ -69,7 +69,7 @@ export const CreateEquip = () => {
                     <label className='enderecoInput'>
                         Endereço
                         <input
-                            placeholder='Av. AGENOR GONÇALVES APOS HOSPITAL 5 DE OUTUBRO (ENTRADA) Canaã dos Carajás - PA'
+                            placeholder='Av. AGENOR GONÇALVES - Canaã dos Carajás - PA'
                             type="text"
                             name="endereco"
                             value={formValues.endereco}
