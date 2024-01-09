@@ -45,7 +45,6 @@ export const CreateEquip = () => {
         <div className='container'>
             <form className='conteinerForm'>
                 <h1 className="title">Cadastro de Equipamento</h1>
-                <h1 className="title">Herisson meu Supervisor</h1>
                 <hr />
                 <div className="containerEquip">
                     <label>
