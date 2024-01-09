@@ -54,7 +54,34 @@
 }
 
 .enderecoInput input {
-    width: 700px;
+    width: 780px;
+}
+
+.containerEquipExtra {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100vh;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    margin-right: 25rem;
+}
+
+.containerEquipExtra label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.labelExtra {
+    width: 180px;
+}
+
+.containerEquipExtra input {
+    width: 180px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .containerIp {
@@ -70,10 +97,6 @@
 .containerIp label {
     text-align: left;
     font-weight: bold;
-}
-
-.labelObs input {
-    width: 300px;
 }
 
 .containerIp input {
