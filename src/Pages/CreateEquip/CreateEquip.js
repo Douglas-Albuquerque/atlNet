@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BgImage } from "../../Components/bgImage/BgImage.js"
 import "./CreateEquip.css"
 
 
@@ -43,6 +44,7 @@ export const CreateEquip = () => {
 
     return (
         <div className='container'>
+            <BgImage />
             <form className='conteinerForm'>
                 <h1 className="title">Cadastro de Equipamento</h1>
                 <hr />

@@ -4,7 +4,7 @@ import LayoutAtl from "../Components/Layout/LayoutAtl";
 import { Login } from "../Pages/Login/Login";
 import Contracts from "../Pages/Contracts/Contracts";
 import SearchPage from "../Pages/Search/SearchPage";
-import {CreateEquip} from "../Pages/CreateEquip/CreateEquip";
+import { CreateEquip } from "../Pages/CreateEquip/CreateEquip";
 import Equipaments from "../Pages/Equipaments/Equipaments";
 import "../Components/Layout/LayoutAtl"
 import { UserCreate } from "../Pages/UserCreate/UserCreate";
@@ -14,10 +14,10 @@ const RoutePage = () => {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="usercreate" element={<UserCreate />} />
         <Route element={<LayoutAtl />}>
           <Route index element={<Contracts />} />
           <Route path="search" element={<SearchPage />} />
-          <Route path="usercreate" element={<UserCreate />} />
           <Route path="createequip" element={<CreateEquip />} />
           <Route path="equipamentos/:item" element={<Equipaments />} />
         </Route>

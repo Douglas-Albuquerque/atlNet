@@ -5,7 +5,6 @@
     opacity: 0.1;
     align-self: center;
     align-content: center;
-}
-.img{
-    object-fit: contain;
+    pointer-events: none;
+    caret-color: transparent
 }

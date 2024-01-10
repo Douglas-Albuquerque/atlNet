@@ -10,7 +10,7 @@ export const Login = () => {
     const [password, setPassword] = useState("");
     return (
         <LayoutForms>
-            <form className="login-form">
+            <form className="login-form" onSubmit={"/"}>
                 <span className="login-form-title">
                     <img src={atlImg} alt="Atlanta" />
                 </span>

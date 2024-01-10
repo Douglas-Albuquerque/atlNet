@@ -13,8 +13,8 @@ export const UserCreate = () => {
     const [password, setPassword] = useState("");
     return (
         <LayoutForms>
-            <form className="login-form">
-                <span className="login-form-title">
+            <form className="user-form">
+                <span className="user-form-title">
                     <img src={atlImg} alt="Atlanta" />
                 </span>
                 {/* Nome do usuário */}
@@ -22,8 +22,8 @@ export const UserCreate = () => {
                     <input
                         className={
                             name !== ""
-                                ? 'has-val input-login'
-                                : 'input-login'
+                                ? 'has-val input-user'
+                                : 'input-user'
                         }
                         type="text"
                         value={name}
@@ -36,8 +36,8 @@ export const UserCreate = () => {
                     <input
                         className={
                             company !== ""
-                                ? 'has-val input-login'
-                                : 'input-login'
+                                ? 'has-val input-user'
+                                : 'input-user'
                         }
                         type="text"
                         value={company}
@@ -50,8 +50,8 @@ export const UserCreate = () => {
                     <input
                         className={
                             office !== ""
-                                ? 'has-val input-login'
-                                : 'input-login'
+                                ? 'has-val input-user'
+                                : 'input-user'
                         }
                         type="text"
                         value={office}
@@ -64,8 +64,8 @@ export const UserCreate = () => {
                     <input
                         className={
                             email !== ""
-                                ? 'has-val input-login'
-                                : 'input-login'
+                                ? 'has-val input-user'
+                                : 'input-user'
                         }
                         type="email"
                         value={email}
@@ -78,8 +78,8 @@ export const UserCreate = () => {
                     <input
                         className={
                             password !== ""
-                                ? 'has-val input-login'
-                                : 'input-login'
+                                ? 'has-val input-user'
+                                : 'input-user'
                         }
                         type="password"
                         value={password}
@@ -89,7 +89,7 @@ export const UserCreate = () => {
                 </div>
 
                 <div className="container-form-btn">
-                    <button className="login-form-btn">Salvar</button>
+                    <button className="user-form-btn">Salvar</button>
                 </div>
 
                 <div className="text-botton">
