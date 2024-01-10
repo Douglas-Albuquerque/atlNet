@@ -7,6 +7,7 @@ import SearchPage from "../Pages/Search/SearchPage";
 import {CreateEquip} from "../Pages/CreateEquip/CreateEquip";
 import Equipaments from "../Pages/Equipaments/Equipaments";
 import "../Components/Layout/LayoutAtl"
+import { UserCreate } from "../Pages/UserCreate/UserCreate";
 
 const RoutePage = () => {
   return (
@@ -16,6 +17,7 @@ const RoutePage = () => {
         <Route element={<LayoutAtl />}>
           <Route index element={<Contracts />} />
           <Route path="search" element={<SearchPage />} />
+          <Route path="usercreate" element={<UserCreate />} />
           <Route path="createequip" element={<CreateEquip />} />
           <Route path="equipamentos/:item" element={<Equipaments />} />
         </Route>
