@@ -106,6 +106,7 @@ const LayoutAtl = () => {
                 <Content
                     style={{
                         minHeight: "93.1vh",
+                        alignContent: "center"
                     }}
                 >
                     <div>
