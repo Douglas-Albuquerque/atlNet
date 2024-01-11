@@ -1,6 +1,12 @@
-.contentEquipaments {
+.containerEquipaments {
+  align-content: flex-start;
+  margin-top: 3rem;
+  min-width: 90vh;
+  min-height: 90vh;
+  width: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 50px;
+  justify-content: center;
+  align-items: center; 
+  
 }

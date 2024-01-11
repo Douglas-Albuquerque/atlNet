@@ -84,7 +84,7 @@ const LayoutAtl = () => {
                                 label: 'Perfil',
                             },
                             {
-                                key: '5',
+                                key: '/usercreate',
                                 icon: <UsergroupAddOutlined />,
                                 label: 'Usuários',
                             },
@@ -101,15 +101,16 @@ const LayoutAtl = () => {
                         display: "flex",
                     }}
                 >
-                    <p className='text'>Atlanta Network</p>
+                    <p className='text'>Atlanta Suporte</p>
                 </Header>
                 <Content
                     style={{
                         minHeight: "93.1vh",
+                        alignContent: "center"
                     }}
                 >
                     <div>
-                        <Outlet/>
+                        <Outlet />
                     </div>
 
                 </Content>

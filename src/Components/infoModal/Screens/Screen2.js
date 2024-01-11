@@ -3,7 +3,6 @@ import { Col, Row } from 'antd';
 import './Screen.css'
 
 const Screen2 = ({ data }) => {
-    console.log(data);
     return (
         <div>
             <div className="container1col">

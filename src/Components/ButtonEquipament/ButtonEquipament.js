@@ -2,8 +2,7 @@ import React from "react";
 import "./ButtonEquipament.css";
 
 function ButtonEquipament({ name, onClick, data, openModal }) {
-    console.log(data);
-
+    
     const handleClick = () => {
         openModal(data);
         if (onClick) {
