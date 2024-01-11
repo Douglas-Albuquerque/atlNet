@@ -52,9 +52,16 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
 }
-
+.containerEquip select {
+    width: 180px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
 .enderecoInput input {
     width: 780px;
 }
@@ -83,8 +90,7 @@
     width: 180px;
     padding: 8px;
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    border-radius: 4px;
+    box-shadowadius: 4px;
     box-sizing: border-box;
 }
 
@@ -109,7 +115,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
 }
 
 .containerPorts {
@@ -133,7 +139,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+;
 
 }
 
@@ -158,5 +164,5 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
 }

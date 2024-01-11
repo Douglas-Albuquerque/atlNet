@@ -16,8 +16,7 @@ const Contracts = () => {
         await axios.get("http://atlnetserver.ddns.net:3001/searchContract")
             .then(
                 response => {
-                    setData(response.data)
-                    console.log(response.data);
+                    setData(response.data);
                 }
             ).catch(
                 err => {

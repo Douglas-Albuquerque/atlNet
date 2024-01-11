@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
-import { BgImage } from "../../Components/bgImage/BgImage.js"
+import React, { useEffect, useState } from 'react';
 import "./CreateEquip.css"
+import axios from 'axios';
 
 
 export const CreateEquip = () => {
 
     const [formValues, setFormValues] = useState({
+        //Dados do equipamentos
+        idContrato: "",
+        codEquip: "",
+        endereco: "",
+        sentido: "",
+        status: "ATIVO",
+        latitude: "",
+        longitude: "",
+        //Dados de Ip
         ipWan: "",
         ipLan: "10.254.254.254",
         ipVpn: "",
         ipCam1: "10.254.254.64",
-        ipCam2: "",
+        ipCam2: "-",
         tipoEquip: "LPR FIXO",
         sshUser: "atlanta",
         rtspUser: "admin",
@@ -20,43 +29,97 @@ export const CreateEquip = () => {
         iatsmsblitz: "8090",
         issh: "22222",
         irtspCam1: "554",
-        irtspCam2: "",
+        irtspCam2: "-",
         ihttpCam1: "8164",
-        ihttpCam2: "",
+        ihttpCam2: "-",
         ihttpMikrotik: "8001",
         invrCam1: "8888",
-        invrCam2: "",
+        invrCam2: "-",
         //portas externas
         atsmsblitz: "8090",
         ssh: "22222",
         rtspCam1: "554",
-        rtspCam2: "",
+        rtspCam2: "-",
         httpCam1: "8164",
-        httpCam2: "",
+        httpCam2: "-",
         httpMikrotik: "8001",
         nvrCam1: "8888",
-        nvrCam2: "",
+        nvrCam2: "-",
     });
 
     const handleChange = (e) => {
-        setFormValues({ ...formValues, [e.target.name]: e.target.value });
+        if (e.target.name === "idContrato") {
+            const selectedContractId = e.target.value;
+            console.log("ID do Contrato selecionado:", selectedContractId);
+            setFormValues({
+                ...formValues,
+                idContrato: selectedContractId,
+            });
+        } else {
+            setFormValues({ ...formValues, [e.target.name]: e.target.value });
+        }
     };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const requiredFields = [
+            'idContrato', 'codEquip', 'endereco', 'sentido', 'status', 'latitude', 'longitude',
+            'ipWan', 'ipLan', 'ipVpn', 'ipCam1', 'tipoEquip', 'sshUser', 'rtspUser', 'rtspSenha',
+            'iatsmsblitz', 'issh', 'irtspCam1', 'ihttpCam1', 'ihttpMikrotik', 'invrCam1',
+            'atsmsblitz', 'ssh', 'rtspCam1', 'httpCam1', 'httpMikrotik', 'nvrCam1'
+        ];
+    
+        const missingFields = requiredFields.filter(field => !formValues[field]);
+    
+        if (missingFields.length > 0) {
+            console.error('Campos obrigatórios ausentes:', missingFields.join(', '));
+            return;
+        }
+    
+        try {
+            const response = await axios.post("http://atlnetserver.ddns.net:3001/createEquip", formValues);
+            console.log('Dados enviados com sucesso:', response.data);
+        } catch (error) {
+            console.error('Erro ao enviar dados:', error);
+        }
+    };
+    
+    const [contratos, setContratos] = useState([]);
+
+    useEffect(() => {
+        const getContracts = async () => {
+            try {
+                const response = await axios.get("http://atlnetserver.ddns.net:3001/searchContract");
+                setContratos(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar contratos:', error);
+            }
+        };
+
+        getContracts();
+    }, []);
 
     return (
         <div className='container'>
-            <BgImage />
-            <form className='conteinerForm'>
+
+            <form className='conteinerForm' onSubmit={handleSubmit}>
                 <h1 className="title">Cadastro de Equipamento</h1>
                 <hr />
                 <div className="containerEquip">
                     <label>
-                        ID do Contrato
-                        <input
-                            type="number"
+                        Contrato
+                        <select
                             name="idContrato"
                             value={formValues.idContrato}
                             onChange={handleChange}
-                        />
+                        >
+                            <option value="" disabled>Selecione um contrato</option>
+                            {contratos.map((contrato) => (
+                                <option key={contrato.id} value={contrato.id}>
+                                    {contrato.nameContract}
+                                </option>
+                            ))}
+                        </select>
                     </label>
                     <label>
                         Código do Equipamento
