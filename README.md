@@ -7,3 +7,5 @@ este projeto foi criado utilizando as seguintes tecnologias:
 + React Js
 + Node Js
 + Sequelize
++ Axios
++ Styled Components
