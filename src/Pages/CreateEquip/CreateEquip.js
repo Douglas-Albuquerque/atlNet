@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import "./CreateEquip.css"
 import axios from 'axios';
+import SuccessPopUp from '../../Components/PopUp/SuccessPopUp';
+import FailPopUp from '../../Components/FailPopUp/FailPopUp';
+import "./CreateEquip.css"
 
 
 export const CreateEquip = () => {
 
-    const [formValues, setFormValues] = useState({
+    const initialValues = {
         //Dados do equipamentos
         idContrato: "",
         codEquip: "",
@@ -45,7 +47,19 @@ export const CreateEquip = () => {
         httpMikrotik: "8001",
         nvrCam1: "8888",
         nvrCam2: "-",
-    });
+    };
+
+    const [contratos, setContratos] = useState([]);
+
+    const [showSuccessPopUp, setShowSuccessPopUp] = useState(false);
+
+    const [formValues, setFormValues] = useState(initialValues);
+
+    const [showFailPopUp, setShowFailPopUp] = useState(false);
+
+    const resetForm = () => {
+        setFormValues(initialValues);
+    };
 
     const handleChange = (e) => {
         if (e.target.name === "idContrato") {
@@ -61,30 +75,36 @@ export const CreateEquip = () => {
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         const requiredFields = [
             'idContrato', 'codEquip', 'endereco', 'sentido', 'status', 'latitude', 'longitude',
             'ipWan', 'ipLan', 'ipVpn', 'ipCam1', 'tipoEquip', 'sshUser', 'rtspUser', 'rtspSenha',
             'iatsmsblitz', 'issh', 'irtspCam1', 'ihttpCam1', 'ihttpMikrotik', 'invrCam1',
             'atsmsblitz', 'ssh', 'rtspCam1', 'httpCam1', 'httpMikrotik', 'nvrCam1'
         ];
-    
+
         const missingFields = requiredFields.filter(field => !formValues[field]);
-    
+
         if (missingFields.length > 0) {
             console.error('Campos obrigatórios ausentes:', missingFields.join(', '));
+            setShowFailPopUp(true);
             return;
         }
-    
+
         try {
             const response = await axios.post("http://atlnetserver.ddns.net:3001/createEquip", formValues);
             console.log('Dados enviados com sucesso:', response.data);
+
+            setShowSuccessPopUp(true);
+
+            resetForm();
+
         } catch (error) {
             console.error('Erro ao enviar dados:', error);
+
+            setShowFailPopUp(true);
         }
     };
-    
-    const [contratos, setContratos] = useState([]);
 
     useEffect(() => {
         const getContracts = async () => {
@@ -448,6 +468,18 @@ export const CreateEquip = () => {
                 </div>
                 <button className="Formbutton" type="submit">Salvar</button>
             </form>
+            {showSuccessPopUp && (
+                <SuccessPopUp
+                    message="Cadastro realizado com sucesso"
+                    onClose={() => setShowSuccessPopUp(false)}
+                />
+            )}
+            {showFailPopUp && (
+                <FailPopUp
+                    message="Erro ao cadastrar equipamento"
+                    onClose={() => setShowFailPopUp(false)}
+                />
+            )}
         </div>
     );
 }
