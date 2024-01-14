@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
 import atlImg from "../../assets/atl.png"
 import { LayoutForms } from "../../Components/LayoutForms/LayoutForms";
 import "./Login.css"
@@ -8,9 +9,31 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const history = useNavigate();
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:3001/login', {
+                email: email,
+                password: password,
+            });
+
+            console.log(response.data.token)
+            const token = response.data.token;
+      
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            console.log(axios.defaults.headers.common['Authorization']);
+      
+            history('/');
+        } catch (error) {
+            console.error('Erro no login:', error);
+        }
+    };
     return (
         <LayoutForms>
-            <form className="login-form" onSubmit={"/"}>
+            <form className="login-form" onSubmit={handleLogin}>
                 <span className="login-form-title">
                     <img src={atlImg} alt="Atlanta" />
                 </span>

@@ -13,7 +13,7 @@ const Contracts = () => {
         navigate(`/equipamentos/${encodeURIComponent(JSON.stringify(equipments))}`)
     }
     async function getEquip() {
-        await axios.get("http://atlnetserver.ddns.net:3001/searchContract")
+        await axios.get("http://localhost:3001/searchContract")
             .then(
                 response => {
                     setData(response.data);

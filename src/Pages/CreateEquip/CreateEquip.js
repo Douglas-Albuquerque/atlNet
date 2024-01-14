@@ -61,6 +61,14 @@ export const CreateEquip = () => {
         setFormValues(initialValues);
     };
 
+    const isDuplicateEquip = () => {
+        const existingEquip = contratos
+            .find((contrato) => contrato.id === formValues.idContrato)
+            ?.Equipaments.some((equip) => equip.codEquip === formValues.codEquip);
+    
+        return existingEquip;
+    };   
+
     const handleChange = (e) => {
         if (e.target.name === "idContrato") {
             const selectedContractId = e.target.value;
@@ -91,8 +99,14 @@ export const CreateEquip = () => {
             return;
         }
 
+        if (isDuplicateEquip()) {
+            console.error('Equipamento duplicado no mesmo contrato.');
+            setShowFailPopUp(true);
+            return;
+        }    
+
         try {
-            const response = await axios.post("http://atlnetserver.ddns.net:3001/createEquip", formValues);
+            const response = await axios.post("http://localhost:3001/createEquip", formValues);
             console.log('Dados enviados com sucesso:', response.data);
 
             setShowSuccessPopUp(true);
@@ -109,7 +123,7 @@ export const CreateEquip = () => {
     useEffect(() => {
         const getContracts = async () => {
             try {
-                const response = await axios.get("http://atlnetserver.ddns.net:3001/searchContract");
+                const response = await axios.get("http://localhost:3001/searchContract");
                 setContratos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar contratos:', error);
