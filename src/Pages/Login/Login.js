@@ -9,26 +9,32 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const history = useNavigate();
+
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(process.env.REACT_APP_API_URL + 'login', {
+            setLoading(true);
+
+            const response = await axios.post(`${apiUrl}/login`, {
                 email: email,
                 password: password,
             });
 
-            console.log(response.data.token)
             const token = response.data.token;
 
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            console.log(axios.defaults.headers.common['Authorization']);
 
             history('/');
         } catch (error) {
             console.error('Erro no login:', error);
+
+        } finally {
+            setLoading(false);
         }
     };
     return (
@@ -66,13 +72,14 @@ export const Login = () => {
                 </div>
 
                 <div className="container-form-btn">
-                    <button className="login-form-btn">Login</button>
+                    <button className="login-form-btn" disabled={loading}>
+                        {loading ? 'Entrando...' : 'Login'}
+                    </button>
                 </div>
 
                 <div className="text-botton">
                     <Link className="text2" to="/"><ArrowLeftOutlined /></Link>
                 </div>
-
             </form>
         </LayoutForms>
     );
