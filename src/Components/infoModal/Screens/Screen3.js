@@ -3,9 +3,9 @@ import './Screen.css'
 
 function Screen3({ data }) {
     return (
-        <div className="containerScree3">
+        <div className="fixedSizeContainer">
             <p className="paragTitle">ACESSOS</p>
-            <hr className="divisionLine"></hr>
+            <hr className="divisionLineScreen3"></hr>
 
             <p className="paragLabels">ATSMSBLITZ:</p>
 

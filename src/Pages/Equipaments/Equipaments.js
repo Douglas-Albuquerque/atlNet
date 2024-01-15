@@ -35,6 +35,10 @@ const Equipaments = () => {
         }
     }, [location]);
 
+    const sortEquipments = (equipments) => {
+        return equipments.slice().sort((a, b) => a.codEquip - b.codEquip);
+    };
+
     const openModal = (equipment) => {
         setSelectedEquipment(equipment);
         setShowModal(true);
@@ -50,7 +54,7 @@ const Equipaments = () => {
             <BgImage />
             <div className='containerEquipaments'>
                 <EquipamentsContainer>
-                    {equipments.map((item, id) => (
+                    {sortEquipments(equipments).map((item, id) => (
                         <ButtonEquipament
                             key={id}
                             name={item.codEquip}
