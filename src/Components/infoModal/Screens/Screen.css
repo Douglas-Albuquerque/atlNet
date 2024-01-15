@@ -27,6 +27,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
+
 }
 
 .container2col {
@@ -45,13 +47,6 @@
 
 }
 
-.containerScree3 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
 .paragTitle {
     margin: 0;
     font-weight: bold;
@@ -67,7 +62,41 @@
     flex-direction: row;
     width: 400px;
     border: 1px solid #1F4070;
-    margin-top: 0;
+    margin-left: 14rem;
+    margin-top: 1rem;
+}
+
+.divisionLineScreen3 {
+    flex-direction: row;
+    width: 400px;
+    border: 1px solid #1F4070;
     margin-left: 14rem;
 
+}
+
+.fixedSizeContainer {
+    width: 850px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.fixedSizeContainerScreen1 {
+    width: 850px;
+    height: 450px;
+}
+
+.contentScreen1 {
+    padding: 1rem;
+}
+
+.contInternaCol1 {
+    margin-left: 4rem;
+}
+
+.contInternaCol2 {
+    margin-right: 4rem;
 }

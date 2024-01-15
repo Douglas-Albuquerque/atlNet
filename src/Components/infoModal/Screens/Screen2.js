@@ -4,7 +4,7 @@ import './Screen.css'
 
 const Screen2 = ({ data }) => {
     return (
-        <div>
+        <div className="fixedSizeContainer">
             <div className="container1col">
                 <div>
                     <Row>
@@ -51,7 +51,7 @@ const Screen2 = ({ data }) => {
             </div>
             <hr></hr>
             <div className="container2col">
-                <div className="contInterna">
+                <div className="contInternaCol1">
                     <Col>
                         <Row>
                             <Col className="titleText">
@@ -135,7 +135,7 @@ const Screen2 = ({ data }) => {
                 <div className="hrStyle">
                     <hr></hr>
                 </div>
-                <div>
+                <div className="contInternaCol2">
                     <Col>
                         <Row>
                             <Col className="titleText">

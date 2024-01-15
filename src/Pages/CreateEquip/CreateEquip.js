@@ -61,6 +61,14 @@ export const CreateEquip = () => {
         setFormValues(initialValues);
     };
 
+    const isDuplicateEquip = () => {
+        const existingEquip = contratos
+            .find((contrato) => contrato.id === formValues.idContrato)
+            ?.Equipaments.some((equip) => equip.codEquip === formValues.codEquip);
+
+        return existingEquip;
+    };
+
     const handleChange = (e) => {
         if (e.target.name === "idContrato") {
             const selectedContractId = e.target.value;
@@ -73,6 +81,7 @@ export const CreateEquip = () => {
             setFormValues({ ...formValues, [e.target.name]: e.target.value });
         }
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -91,8 +100,14 @@ export const CreateEquip = () => {
             return;
         }
 
+        if (isDuplicateEquip()) {
+            console.error('Equipamento duplicado no mesmo contrato.');
+            setShowFailPopUp(true);
+            return;
+        }
+
         try {
-            const response = await axios.post("http://atlnetserver.ddns.net:3001/createEquip", formValues);
+            const response = await axios.post(process.env.REACT_APP_API_URL + "createEquip", formValues);
             console.log('Dados enviados com sucesso:', response.data);
 
             setShowSuccessPopUp(true);
@@ -105,11 +120,18 @@ export const CreateEquip = () => {
             setShowFailPopUp(true);
         }
     };
+    const handleSelectChange = (name, value) => {
+        console.log(`Valor do select ${name} selecionado: ${value}`);
 
+        setFormValues({
+            ...formValues,
+            [name]: value,
+        });
+    };
     useEffect(() => {
         const getContracts = async () => {
             try {
-                const response = await axios.get("http://atlnetserver.ddns.net:3001/searchContract");
+                const response = await axios.get(process.env.REACT_APP_API_URL + "searchContract");
                 setContratos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar contratos:', error);
@@ -129,6 +151,7 @@ export const CreateEquip = () => {
                     <label>
                         Contrato
                         <select
+                            className='selectOption'
                             name="idContrato"
                             value={formValues.idContrato}
                             onChange={handleChange}
@@ -195,13 +218,15 @@ export const CreateEquip = () => {
                     </label>
                     <label>
                         Status
-                        <input
-                            placeholder='Ativo'
-                            type="text"
+                        <select
+                            className='selectOption'
                             name="status"
                             value={formValues.status}
-                            onChange={handleChange}
-                        />
+                            onChange={(e) => handleSelectChange("status", e.target.value)}
+                        >
+                            <option value="ativo">ATIVO</option>
+                            <option value="inativo">INATIVO</option>
+                        </select>
                     </label>
                 </div>
                 <hr />
@@ -253,12 +278,15 @@ export const CreateEquip = () => {
                     </label>
                     <label>
                         Tipo
-                        <input
-                            type="text"
-                            name="tipoEquip"
-                            value={formValues.tipoEquip}
-                            onChange={handleChange}
-                        />
+                        <select
+                            className='selectOption'
+                            name="tipo"
+                            value={formValues.status}
+                            onChange={(e) => handleSelectChange("status", e.target.value)}
+                        >
+                            <option value="LPR FIXO">LPR FIXO</option>
+                            <option value="LPR PTZ">LPR PTZ</option>
+                        </select>
                     </label>
                     <label>
                         SSH User
@@ -298,6 +326,7 @@ export const CreateEquip = () => {
                     </label>
                 </div>
                 <hr />
+                <h2>Portas internas</h2>
                 <div className="containerPorts">
                     <label>
                         Porta Atsmsblitz
@@ -382,9 +411,10 @@ export const CreateEquip = () => {
                     </label>
                 </div>
                 <hr />
+                <h2>Portas Externas</h2>
                 <div className="containerExtPorts">
                     <label>
-                        Porta Ext Atsmsblitz
+                        Porta Atsmsblitz
                         <input
                             type="text"
                             name="atsmsblitz"
@@ -393,7 +423,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext SSH
+                        Porta SSH
                         <input
                             type="text"
                             name="ssh"
@@ -402,7 +432,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext RTPS Câmera 1
+                        Porta RTPS Câmera 1
                         <input
                             type="text"
                             name="rtspCam1"
@@ -411,7 +441,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext RTPS Câmera 2
+                        Porta RTPS Câmera 2
                         <input
                             type="text"
                             name="rtspCam2"
@@ -420,7 +450,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext HTTP Câmera 1
+                        Porta HTTP Câmera 1
                         <input
                             type="text"
                             name="httpCam1"
@@ -429,7 +459,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext HTTP Câmera 1
+                        Porta HTTP Câmera 1
                         <input
                             type="text"
                             name="httpCam2"
@@ -438,7 +468,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext HTTP Mikrotik
+                        Porta HTTP Mikrotik
                         <input
                             type="text"
                             name="httpMikrotik"
@@ -447,7 +477,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext NVR Câmera 1
+                        Porta NVR Câmera 1
                         <input
                             type="text"
                             name="nvrCam1"
@@ -456,7 +486,7 @@ export const CreateEquip = () => {
                         />
                     </label>
                     <label>
-                        Porta Ext NVR Câmera 2
+                        Porta NVR Câmera 2
                         <input
                             type="text"
                             name="nvrCam2"

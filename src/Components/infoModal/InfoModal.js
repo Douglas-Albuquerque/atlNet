@@ -78,7 +78,7 @@ const InfoModal = ({ openModal, closeModal, data }) => {
   };
 
   useEffect(() => {
-    
+
   }, [countPage]);
 
   return (

@@ -52,9 +52,10 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    
+
 }
-.containerEquip select {
+
+.selectOption {
     width: 180px;
     padding: 7px;
     border: 1px solid #ccc;
@@ -62,6 +63,7 @@
     box-sizing: border-box;
     font-size: 14px;
 }
+
 .enderecoInput input {
     width: 780px;
 }
@@ -115,7 +117,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    
+
 }
 
 .containerPorts {
@@ -139,7 +141,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-;
+    ;
 
 }
 
@@ -164,5 +166,5 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    
+
 }
