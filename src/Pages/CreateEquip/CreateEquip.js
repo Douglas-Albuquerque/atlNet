@@ -107,7 +107,7 @@ export const CreateEquip = () => {
         }
 
         try {
-            const response = await axios.post(process.env.REACT_APP_API_URL + "createEquip", formValues);
+            const response = await axios.post(process.env.REACT_APP_API_URL + "/createEquip", formValues);
             console.log('Dados enviados com sucesso:', response.data);
 
             setShowSuccessPopUp(true);
@@ -131,7 +131,7 @@ export const CreateEquip = () => {
     useEffect(() => {
         const getContracts = async () => {
             try {
-                const response = await axios.get(process.env.REACT_APP_API_URL + "searchContract");
+                const response = await axios.get(process.env.REACT_APP_API_URL + "/searchContract");
                 setContratos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar contratos:', error);
