@@ -5,6 +5,7 @@
     opacity: 0.1;
     align-self: center;
     align-content: center;
-    pointer-events: none;
+
+
     caret-color: transparent
 }

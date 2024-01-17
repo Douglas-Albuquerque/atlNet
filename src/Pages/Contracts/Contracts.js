@@ -23,7 +23,8 @@ const Contracts = () => {
         navigate(`/equipamentos/${encodeURIComponent(JSON.stringify(equipments))}`)
     }
     async function getEquip() {
-        await axios.get(process.env.REACT_APP_API_URL + "/searchContract")
+        await axios.get(
+            + "/searchContract")
             .then(
                 response => {
                     setData(response.data);
