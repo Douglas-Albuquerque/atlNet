@@ -33,7 +33,7 @@ const LayoutAtl = () => {
                 <Sider
                     trigger={null}
                     collapsible collapsed={collapsed}
-                    style={{ backgroundColor: '#', color: '#FFF' }}
+                    style={{ backgroundColor: '#1F4070', color: '#FFF' }}
                 >
                     <div className='logoBox'>
                         <Button
