@@ -101,7 +101,7 @@ const LayoutAtl = () => {
                         display: "flex",
                     }}
                 >
-                    <p className='text'>Atlanta Suporte</p>
+                    <p className='text'>Suporte Operacional</p>
                 </Header>
                 <Content
                     style={{
