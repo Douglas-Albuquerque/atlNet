@@ -24,7 +24,7 @@ const Contracts = () => {
     }
     async function getEquip() {
         await axios.get(
-            + "/searchContract")
+            process.env.REACT_APP_API_URL + "/searchContract")
             .then(
                 response => {
                     setData(response.data);
