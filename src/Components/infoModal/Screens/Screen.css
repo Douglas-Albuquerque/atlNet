@@ -61,7 +61,7 @@
 .divisionLine {
     flex-direction: row;
     width: 400px;
-    border: 1px solid #FF007F;
+    border: 1px solid #1F4070;
     margin-left: 14rem;
     margin-top: 1rem;
 }
@@ -69,7 +69,7 @@
 .divisionLineScreen3 {
     flex-direction: row;
     width: 400px;
-    border: 1px solid #FF007F;
+    border: 1px solid #1F4070;
     margin-left: 14rem;
 
 }

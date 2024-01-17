@@ -13,7 +13,7 @@ const useStyle = createStyles(({ token }) => ({
     boxShadow: `inset 0 0 15px #000`,
   },
   'my-modal-header': {
-    borderBottom: '3px solid #FF007F',
+    borderBottom: '3px solid #1F4070',
     display: 'flex',
     justifyContent: 'center',
   },
@@ -69,7 +69,7 @@ const InfoModal = ({ openModal, closeModal, data }) => {
       backdropFilter: 'blur(10px)',
     },
     footer: {
-      borderTop: '3px solid #FF007F',
+      borderTop: '3px solid #1F4070',
     },
     content: {
       boxShadow: '0 0 30px #999',

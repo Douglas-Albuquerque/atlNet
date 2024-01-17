@@ -33,7 +33,7 @@ const LayoutAtl = () => {
                 <Sider
                     trigger={null}
                     collapsible collapsed={collapsed}
-                    style={{ backgroundColor: '#FF007F', color: '#FFF' }}
+                    style={{ backgroundColor: '#1F4070', color: '#FFF' }}
                 >
                     <div className='logoBox'>
                         <Button
@@ -53,7 +53,7 @@ const LayoutAtl = () => {
                         />
                     </div>
                     <Menu
-                        style={{ backgroundColor: '#FF007F', color: '#FFF' }}
+                        style={{ backgroundColor: '#1F4070', color: '#FFF' }}
                         theme="dark"
                         color='white'
                         mode="inline"
@@ -97,7 +97,7 @@ const LayoutAtl = () => {
                 <Header
                     style={{
                         padding: 0,
-                        background: "#FF007F",
+                        background: "#1F4070",
                         display: "flex",
                     }}
                 >
