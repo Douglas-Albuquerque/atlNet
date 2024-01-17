@@ -53,7 +53,7 @@ const LayoutAtl = () => {
                         />
                     </div>
                     <Menu
-                        style={{ backgroundColor: '#1F4070', color: '#FFF' }}
+                        style={{ backgroundColor: '#FF007F', color: '#FFF' }}
                         theme="dark"
                         color='white'
                         mode="inline"
@@ -97,7 +97,7 @@ const LayoutAtl = () => {
                 <Header
                     style={{
                         padding: 0,
-                        background: "#1F4070",
+                        background: "#FF007F",
                         display: "flex",
                     }}
                 >
